@@ -1,0 +1,518 @@
+@import "tailwindcss";
+/* Direct path (not the "@mind-studio/ui/styles.css" exports subpath) so Tailwind's
+   CSS @import resolver finds the file on disk under node_modules. */
+@import "../../node_modules/@mind-studio/ui/dist/styles.css";
+
+/* Generate utilities for the class names used inside the @mind-studio/ui components. */
+@source "../../node_modules/@mind-studio/ui/dist";
+
+/*
+ * mind-landing — the public face of mindpods.org. Same @mind-studio/ui Mind brand
+ * (teal, dark) and atmosphere as the dock, so the marketing site feels like the
+ * same family as the apps it sells.
+ */
+
+:root {
+  --font-display: var(--font-fraunces), "Iowan Old Style", Georgia, serif;
+  --font-body: var(--font-hanken), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-jb), ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+/* Make the @mind-studio/ui component utilities (font-sans / font-mono) use our type. */
+@theme inline {
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+html,
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  min-height: 100vh;
+}
+
+/* ---- atmosphere ---------------------------------------------------------- */
+
+/* A slow teal aurora that gives the dark surface depth. */
+.aurora {
+  position: fixed;
+  inset: -20vh -10vw;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(38vw 30vw at 18% 8%, color-mix(in oklch, var(--primary) 26%, transparent), transparent 62%),
+    radial-gradient(34vw 28vw at 88% 0%, color-mix(in oklch, oklch(0.7 0.13 210) 20%, transparent), transparent 60%),
+    radial-gradient(46vw 36vw at 60% 108%, color-mix(in oklch, var(--primary) 14%, transparent), transparent 64%);
+  filter: blur(8px) saturate(125%);
+  animation: auroraDrift 24s ease-in-out infinite alternate;
+}
+@keyframes auroraDrift {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(-2.5vw, 2vh, 0) scale(1.06); }
+}
+
+/* Fine film grain, masked toward the center so edges stay clean. */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+::selection {
+  background: color-mix(in oklch, var(--primary) 26%, transparent);
+}
+
+:where(button, a, [tabindex]):focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* ---- type helpers -------------------------------------------------------- */
+
+.font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  letter-spacing: -0.015em;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.26em;
+  color: var(--muted-foreground);
+}
+
+/* ---- motion -------------------------------------------------------------- */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.reveal {
+  opacity: 0;
+  animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.float-y { animation: floatY 7s ease-in-out infinite; }
+
+/* ---- the card/tile (a physical-feeling object) --------------------------- */
+
+.tile {
+  position: relative;
+  border-radius: 1.1rem;
+  border: 1px solid var(--border);
+  background:
+    linear-gradient(180deg, color-mix(in oklch, var(--card) 92%, white 4%), var(--card));
+  box-shadow:
+    inset 0 1px 0 0 color-mix(in oklch, white 7%, transparent),
+    0 1px 2px rgba(0, 0, 0, 0.3);
+  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.22s ease,
+    border-color 0.22s ease;
+}
+.tile:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in oklch, var(--primary) 55%, transparent);
+  box-shadow:
+    inset 0 1px 0 0 color-mix(in oklch, white 9%, transparent),
+    0 14px 34px -16px color-mix(in oklch, var(--primary) 70%, transparent),
+    0 2px 6px rgba(0, 0, 0, 0.35);
+}
+.tile-arrow {
+  transition: transform 0.22s ease, opacity 0.22s ease;
+  opacity: 0;
+  transform: translate(-3px, 3px);
+}
+.group:hover .tile-arrow {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.glass-panel {
+  background: color-mix(in oklch, var(--card) 86%, transparent);
+  backdrop-filter: blur(14px) saturate(130%);
+  -webkit-backdrop-filter: blur(14px) saturate(130%);
+  border: 1px solid var(--border);
+}
+
+/* ---- .mind-mark — animated wordmark -------------------------------------
+   Ported from architecture/shared/brand.css. "Decentralized Network In Mind"
+   → the four cyan initials fly together into MIND. CSS-only; self-contained
+   literal colors so it renders identically to the spec site.
+   ------------------------------------------------------------------------- */
+.mind-mark {
+  --hold: 1.9s;     /* how long the sentence shows before collapsing */
+  --move: 1.05s;    /* duration of the fly-together */
+  --scale: 2.55;    /* how large the surviving letters grow */
+  display: flex; align-items: center; justify-content: center; min-height: 5.5em;
+  font-family: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+}
+.mind-mark.panel {
+  margin: 16px 0 32px;
+  border: 1px solid #1e2939; border-radius: 12px; overflow: hidden;
+  background:
+    radial-gradient(ellipse 90% 70% at 50% 45%, rgba(34, 211, 238, .08) 0, transparent 60%),
+    linear-gradient(180deg, #0b0d12, #07080b);
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .6);
+}
+.mind-mark .ln { white-space: nowrap; font-size: clamp(20px, 3.6vw, 46px); line-height: 1; font-weight: 600; }
+.mind-mark .ch { display: inline-block; width: 1ch; text-align: center; }
+.mind-mark .ch .g { display: inline-block; color: #7d8694; will-change: transform, opacity; }
+.mind-mark .c .g { color: #67e8f9; text-shadow: 0 0 .5em rgba(34, 211, 238, .35); }
+.mind-mark .c { animation: mmMove var(--move) cubic-bezier(.6, 0, .2, 1) var(--hold) both; }
+.mind-mark .c .g { animation: mmGrow var(--move) cubic-bezier(.6, 0, .2, 1) var(--hold) both; }
+.mind-mark .l .g { animation: mmFade .55s ease var(--hold) both; }
+@keyframes mmMove { to { transform: translateX(var(--dx)); } }
+@keyframes mmGrow { to { transform: scale(var(--scale));
+  text-shadow: 0 0 .8em rgba(34, 211, 238, .65), 0 0 1.6em rgba(34, 211, 238, .32); } }
+@keyframes mmFade { to { opacity: 0; transform: scale(.18) translateY(.1em); } }
+
+/* ---- depth layers (set in layout.tsx) ------------------------------------ */
+
+/* A faint dot grid that fades toward the edges — gives the dark stage structure. */
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image: radial-gradient(color-mix(in oklch, var(--foreground) 14%, transparent) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: radial-gradient(120% 90% at 50% 0%, black 30%, transparent 78%);
+  -webkit-mask-image: radial-gradient(120% 90% at 50% 0%, black 30%, transparent 78%);
+  opacity: 0.5;
+}
+
+/* A drifting field of faint stars/motes for cosmic depth. */
+.starfield {
+  position: fixed;
+  inset: -10% -10% 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1.4px 1.4px at 12% 18%, color-mix(in oklch, var(--primary) 70%, white) 50%, transparent),
+    radial-gradient(1.2px 1.2px at 78% 12%, color-mix(in oklch, oklch(0.8 0.12 210) 80%, white) 50%, transparent),
+    radial-gradient(1px 1px at 64% 36%, rgba(255,255,255,0.7) 50%, transparent),
+    radial-gradient(1.3px 1.3px at 33% 52%, color-mix(in oklch, var(--primary) 60%, white) 50%, transparent),
+    radial-gradient(1px 1px at 88% 60%, rgba(255,255,255,0.6) 50%, transparent),
+    radial-gradient(1.1px 1.1px at 22% 78%, color-mix(in oklch, oklch(0.8 0.12 210) 70%, white) 50%, transparent);
+  opacity: 0.55;
+  animation: twinkle 6s ease-in-out infinite alternate;
+}
+@keyframes twinkle { from { opacity: 0.35; } to { opacity: 0.7; } }
+
+/* A vignette to focus attention toward the center column. */
+.bg-vignette {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(130% 100% at 50% -10%, transparent 52%, color-mix(in oklch, var(--background) 85%, black) 100%);
+}
+
+/* ---- accent type & buttons ---------------------------------------------- */
+
+/* Solid teal headline accent with a soft glow (no gradient). */
+.headline-accent {
+  color: var(--primary);
+  text-shadow: 0 0 34px color-mix(in oklch, var(--primary) 45%, transparent);
+}
+
+/* Broadcast-style eyebrow: a centered alpha status line flanked by hairline
+   rules — cooler and more cinematic than a bordered pill. */
+.kicker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.6rem, 2vw, 1.1rem);
+}
+.kicker-rule {
+  height: 1px;
+  width: clamp(20px, 9vw, 96px);
+  background: linear-gradient(to right, transparent, color-mix(in oklch, var(--primary) 45%, transparent));
+}
+.kicker-rule--r {
+  background: linear-gradient(to left, transparent, color-mix(in oklch, var(--primary) 45%, transparent));
+}
+.kicker-body {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.kicker-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+.kicker-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--primary);
+  box-shadow: 0 0 0 0 color-mix(in oklch, var(--primary) 60%, transparent);
+  animation: ping 2.4s ease-out infinite;
+}
+.kicker-sep { color: color-mix(in oklch, var(--foreground) 30%, transparent); }
+.kicker-muted { color: var(--muted-foreground); }
+@keyframes ping {
+  0% { box-shadow: 0 0 0 0 color-mix(in oklch, var(--primary) 55%, transparent); }
+  70%, 100% { box-shadow: 0 0 0 7px transparent; }
+}
+
+/* A glow that wraps the primary CTA button. */
+.btn-glow {
+  box-shadow:
+    0 0 0 1px color-mix(in oklch, var(--primary) 50%, transparent),
+    0 10px 40px -10px color-mix(in oklch, var(--primary) 80%, transparent),
+    inset 0 1px 0 color-mix(in oklch, white 30%, transparent);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+.btn-glow:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 0 0 1px color-mix(in oklch, var(--primary) 70%, transparent),
+    0 16px 54px -10px color-mix(in oklch, var(--primary) 90%, transparent),
+    inset 0 1px 0 color-mix(in oklch, white 40%, transparent);
+}
+
+/* Gradient hover border for cards. */
+.card-grad {
+  position: relative;
+}
+.card-grad::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(140deg,
+    color-mix(in oklch, var(--primary) 70%, transparent),
+    transparent 45%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+.card-grad:hover::after { opacity: 1; }
+
+/* ---- scroll-triggered reveal (Reveal component) -------------------------- */
+
+.reveal-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal-up.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ===========================================================================
+   PodConstellation — the hero showpiece. Your pod at the core; apps orbit it
+   on two counter-rotating rings; data motes stream inward along the spokes.
+   Geometry is computed in CSS from --i / --n (deterministic).
+   =========================================================================== */
+
+.pc-stage {
+  --pc-size: clamp(330px, 44vw, 560px);
+  --pc-r-inner: calc(var(--pc-size) * 0.205);
+  --pc-r-outer: calc(var(--pc-size) * 0.355);
+  position: relative;
+  width: var(--pc-size);
+  height: var(--pc-size);
+  margin: 0 auto;
+  isolation: isolate;
+}
+/* Soft halo behind the whole constellation. */
+.pc-stage::before {
+  content: "";
+  position: absolute;
+  inset: -12%;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(closest-side,
+    color-mix(in oklch, var(--primary) 22%, transparent),
+    transparent 72%);
+  filter: blur(10px);
+}
+
+.pc-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+}
+.pc-ring--inner { --r: var(--pc-r-inner); animation: pcSpinCW 88s linear infinite; }
+.pc-ring--outer { --r: var(--pc-r-outer); animation: pcSpinCCW 132s linear infinite; }
+
+/* The faint orbit outline for each ring. */
+.pc-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(var(--r) * 2);
+  height: calc(var(--r) * 2);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid color-mix(in oklch, var(--foreground) 12%, transparent);
+}
+
+/* Each node anchors at a point on its ring. */
+.pc-node {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(calc(360deg / var(--n) * var(--i))) translateX(var(--r));
+}
+
+/* Spoke: a 1px line from the node back to the core. */
+.pc-spoke {
+  position: absolute;
+  top: -0.5px;
+  left: calc(-1 * var(--r));
+  width: var(--r);
+  height: 1px;
+  background: linear-gradient(90deg,
+    color-mix(in oklch, var(--primary) 45%, transparent),
+    color-mix(in oklch, var(--primary) 6%, transparent));
+}
+
+/* Data mote: streams from the node inward to the core. */
+.pc-mote {
+  position: absolute;
+  top: -2.5px;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: color-mix(in oklch, var(--primary) 40%, white);
+  box-shadow: 0 0 8px 1px color-mix(in oklch, var(--primary) 70%, transparent);
+  animation: pcMote 3.6s cubic-bezier(0.5, 0, 0.7, 1) infinite;
+  animation-delay: calc(var(--i) * -0.7s);
+}
+@keyframes pcMote {
+  0% { transform: translateX(0); opacity: 0; }
+  12% { opacity: 1; }
+  82% { opacity: 1; }
+  100% { transform: translateX(calc(-1 * var(--r))); opacity: 0; }
+}
+
+/* Counter-spin wrappers keep labels upright as the rings turn. */
+.pc-spin { position: absolute; top: 0; left: 0; }
+.pc-spin--inner { animation: pcSpinCCW 88s linear infinite; }
+.pc-spin--outer { animation: pcSpinCW 132s linear infinite; }
+.pc-upright { transform: rotate(calc(-360deg / var(--n) * var(--i))); }
+
+.pc-chip {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  border-radius: 0.7rem;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, color-mix(in oklch, var(--card) 94%, white 5%), var(--card));
+  padding: 0.4rem 0.7rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  box-shadow: 0 6px 18px -10px rgba(0, 0, 0, 0.7), inset 0 1px 0 color-mix(in oklch, white 8%, transparent);
+}
+.pc-chip--inner {
+  color: var(--foreground);
+  border-color: color-mix(in oklch, var(--primary) 45%, var(--border));
+  box-shadow: 0 6px 22px -10px color-mix(in oklch, var(--primary) 60%, transparent),
+    inset 0 1px 0 color-mix(in oklch, white 10%, transparent);
+}
+.pc-chip--outer { color: var(--muted-foreground); }
+
+/* The core — your pod. */
+.pc-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: clamp(86px, 13vw, 118px);
+  height: clamp(86px, 13vw, 118px);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(closest-side, color-mix(in oklch, var(--primary) 42%, var(--card)), var(--card) 96%);
+  border: 1px solid color-mix(in oklch, var(--primary) 60%, transparent);
+  box-shadow:
+    0 0 0 6px color-mix(in oklch, var(--primary) 10%, transparent),
+    0 0 60px -6px color-mix(in oklch, var(--primary) 80%, transparent),
+    inset 0 1px 0 color-mix(in oklch, white 18%, transparent);
+  animation: pcCorePulse 4.5s ease-in-out infinite;
+}
+.pc-core-ring {
+  position: absolute;
+  inset: -14px;
+  border-radius: 50%;
+  border: 1px dashed color-mix(in oklch, var(--primary) 40%, transparent);
+  animation: pcSpinCW 24s linear infinite;
+}
+.pc-core-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-shadow: 0 0 18px color-mix(in oklch, var(--primary) 60%, transparent);
+}
+.pc-core-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: color-mix(in oklch, var(--primary) 35%, var(--foreground));
+  margin-bottom: 0.2rem;
+}
+@keyframes pcCorePulse {
+  0%, 100% { box-shadow: 0 0 0 6px color-mix(in oklch, var(--primary) 10%, transparent), 0 0 60px -6px color-mix(in oklch, var(--primary) 75%, transparent), inset 0 1px 0 color-mix(in oklch, white 18%, transparent); }
+  50% { box-shadow: 0 0 0 10px color-mix(in oklch, var(--primary) 6%, transparent), 0 0 80px -2px color-mix(in oklch, var(--primary) 95%, transparent), inset 0 1px 0 color-mix(in oklch, white 22%, transparent); }
+}
+
+@keyframes pcSpinCW { to { transform: rotate(360deg); } }
+@keyframes pcSpinCCW { to { transform: rotate(-360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora, .reveal, .float-y, .tile, .tile-arrow, .starfield,
+  .pc-ring, .pc-spin, .pc-mote, .pc-core, .pc-core-ring, .kicker-dot {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal { opacity: 1; }
+  .reveal-up { opacity: 1 !important; transform: none !important; }
+  .pc-mote { opacity: 0; }
+  .mind-mark .c, .mind-mark .c .g, .mind-mark .l .g { animation: none; }
+  .mind-mark .l .g { opacity: 0; }
+  .mind-mark .c { transform: translateX(var(--dx)); }
+  .mind-mark .c .g { transform: scale(var(--scale)); }
+}
