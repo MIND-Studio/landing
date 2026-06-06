@@ -5,6 +5,7 @@ import { mind } from "@mind-studio/ui/themes";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import "./globals.css";
+import { version as buildVersion } from "../../package.json";
 
 // Distinctive type: a soft optical serif for display, a warm grotesque for body,
 // a mono for micro-labels. Exposed as CSS vars consumed in globals.css.
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" data-mind-theme="mind" suppressHydrationWarning>
+    <html lang="en" data-mind-theme="mind" data-build={buildVersion} suppressHydrationWarning>
       <body className={`${display.variable} ${body.variable} ${mono.variable}`}>
         <ThemeProvider
           theme={mind}
