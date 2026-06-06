@@ -71,7 +71,7 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           build-args: |
-            NEXT_PUBLIC_POD_REGISTER_URL=https://pod.mindpods.org/.account/login/password/register/
+            NEXT_PUBLIC_POD_REGISTER_URL=https://pods.mindpods.org/.account/login/password/register/
             NEXT_PUBLIC_APP_DOCK_URL=https://dock.mindpods.org
             NEXT_PUBLIC_APP_DRIVE_URL=https://drive.mindpods.org
             NEXT_PUBLIC_APP_BUILDER_URL=https://builder.mindpods.org

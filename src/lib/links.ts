@@ -10,7 +10,7 @@
 /** Self-serve "Create your pod" — the live CommunitySolidServer registration page. */
 export const POD_REGISTER_URL =
   process.env.NEXT_PUBLIC_POD_REGISTER_URL ??
-  "https://pod.mindpods.org/.account/login/password/register/";
+  "https://pods.mindpods.org/.account/login/password/register/";
 
 /** The post-login front door (the dock) — "Sign in". */
 export const DOCK_URL =

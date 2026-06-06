@@ -22,7 +22,7 @@ auth, no pod I/O, no database — just marketing pages:
 | `/privacy` | The four load-bearing principles + data portability story |
 | `/pricing` | "Free during the beta" (paid hosted plans + self-hosting noted) |
 
-Primary CTA **Create your pod** → `pod.mindpods.org` self-serve registration.
+Primary CTA **Create your pod** → `pods.mindpods.org` self-serve registration.
 Secondary CTA **Sign in** → `dock.mindpods.org`.
 
 ## Shared packages (GitHub Packages)

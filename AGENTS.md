@@ -8,7 +8,7 @@ may differ from your training data. Read the relevant guide in
 
 The **public, pre-login marketing site** for mindpods.org. It is the apex
 (`mindpods.org`) front door and exists to explain Mind and convert a stranger into
-a pod owner. Hand-off, not product: every CTA links out to `pod.mindpods.org`
+a pod owner. Hand-off, not product: every CTA links out to `pods.mindpods.org`
 (create) or `dock.mindpods.org` (sign in).
 
 ## Hard boundaries (what this app must NEVER grow)
