@@ -4,7 +4,7 @@ This version (16.2.6) has breaking changes — APIs, conventions, and file struc
 may differ from your training data. Read the relevant guide in
 `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 
-# mind-landing-v0 — agent rules
+# landing — agent rules
 
 The **public, pre-login marketing site** for mindpods.org. It is the apex
 (`mindpods.org`) front door and exists to explain Mind and convert a stranger into
@@ -36,8 +36,9 @@ before `npm install`.
 Voice = **for everyone, plain words**. The marketing pages may name the concepts
 (pod, WebID, Solid) because *explaining* them is the job — but lead with plain
 language ("your own private space", "one sign-in") and treat the jargon as the
-reveal, mirroring `architecture/src/architecture.md`. Source copy from
-`../../architecture/src/{architecture,apps,roadmap}.md`.
+reveal, mirroring the architecture spec in
+[`mind-specification`](https://github.com/MIND-Studio/mind-specification).
+Source copy from `mind-specification` (`src/{architecture,apps,roadmap}.md`).
 
 ## Outbound links live in one place
 

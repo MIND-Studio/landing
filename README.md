@@ -1,10 +1,10 @@
-# mind-landing-v0
+# landing
 
 The **public marketing site** for [mindpods.org](https://mindpods.org) — the
 **pre-login** front door that explains what Mind is, shows the apps, and sends a
 new visitor to create a pod.
 
-It is deliberately *not* the dock. The **dock** (`mind-dock-v0`,
+It is deliberately *not* the dock. The **dock** (`dock`,
 `dock.mindpods.org`) is the post-login launcher/profile/account hub for people who
 already have a pod. This site sits in front of it: the apex `mindpods.org` reverse
 proxies here, and the page's primary CTA hands off to pod/dock.
