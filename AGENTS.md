@@ -49,3 +49,11 @@ hard-code `mindpods.org` URLs in pages.
 ## Ports
 
 Dev app `:3090`. Production container listens on `:3000` (Caddy proxies the apex).
+
+## Commits & releases
+
+Use [Conventional Commits](https://www.conventionalcommits.org) on `main`
+(`fix:` → patch, `feat:` → minor, `feat!:` / `BREAKING CHANGE:` → major). Releases,
+tags, and `CHANGELOG.md` are automated by **release-please** — never tag manually
+or hand-edit `CHANGELOG.md`. To cut a release, merge the open
+"chore(main): release X.Y.Z" PR. See the README's Releases section.
