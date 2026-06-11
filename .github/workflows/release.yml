@@ -72,9 +72,9 @@ jobs:
           cache-to: type=gha,mode=max
           build-args: |
             NEXT_PUBLIC_POD_REGISTER_URL=https://pods.mindpods.org/.account/login/password/register/
-            NEXT_PUBLIC_APP_DOCK_URL=https://dock.mindpods.org
-            NEXT_PUBLIC_APP_DRIVE_URL=https://drive.mindpods.org
-            NEXT_PUBLIC_APP_BUILDER_URL=https://builder.mindpods.org
+            NEXT_PUBLIC_APP_DOCK_URL=https://dock.apps.mindpods.org
+            NEXT_PUBLIC_APP_DRIVE_URL=https://drive.apps.mindpods.org
+            NEXT_PUBLIC_APP_BUILDER_URL=https://builder.apps.mindpods.org
             NEXT_PUBLIC_APP_CODESPACES_URL=https://codespaces.mindpods.org
             NEXT_PUBLIC_DOCS_URL=https://mind-studio.github.io/mind-specification/
           # GITHUB_TOKEN has packages:read; installs the public @mind-studio/*
