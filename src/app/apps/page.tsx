@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { Section, SectionHeading } from "@/components/section";
 import { AppCard } from "@/components/app-card";
+import { LauncherMock } from "@/components/launcher-mock";
 import { CtaButtons } from "@/components/cta-buttons";
 import { LIVE_APPS, SOON_APPS } from "@/lib/apps";
 
 export const metadata: Metadata = {
   title: "Apps",
   description:
-    "The Mind app family — Dock, Drive, Builder and Codespaces are live now, with Agents, Chat, Social and more on the way. Every app reads and writes the same pod.",
+    "The Mind app family — twelve apps live now, from Drive and Chat to Calendar, Photos and Codespaces, with Agents, Compass and more on the way. Every app reads and writes the same pod.",
 };
 
 export default function AppsPage() {
@@ -34,11 +35,8 @@ export default function AppsPage() {
         </div>
 
         {/* Product peek */}
-        <div className="mt-10 grid gap-5 md:grid-cols-2">
-          <div className="glass-panel overflow-hidden rounded-2xl">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/launcher.png" alt="The Mind app launcher (Dock)." className="w-full" loading="lazy" />
-          </div>
+        <div className="mt-10 grid items-stretch gap-5 md:grid-cols-2">
+          <LauncherMock />
           <div className="glass-panel overflow-hidden rounded-2xl">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/drive.png" alt="Drive — a file browser for your pod." className="w-full" loading="lazy" />

@@ -6,6 +6,7 @@ import { Reveal } from "@/components/reveal";
 import { CtaButtons } from "@/components/cta-buttons";
 import { Section, SectionHeading } from "@/components/section";
 import { AppCard } from "@/components/app-card";
+import { LauncherMock } from "@/components/launcher-mock";
 import { Faq, type QA } from "@/components/faq";
 import { LIVE_APPS } from "@/lib/apps";
 import { DOCS_URL, SOLID_URL } from "@/lib/links";
@@ -29,7 +30,7 @@ const FAQ_ITEMS: QA[] = [
   },
   {
     q: "Which apps work today?",
-    a: "Dock, Drive, Builder, and Codespaces are live now. Agents, Chat, Social, Docs, Todo, Calendar and more are on the way — and because they all share one pod, each new app makes the others more useful.",
+    a: "Twelve apps are live right now — Dock, Drive, Builder, Codespaces, Chat, Calendar, Contacts, Notes, Photos, Slides, Whiteboard and Shell. Agents, Compass, Pages, Sheets and more are on the way — and because they all share one pod, each new app makes the others more useful.",
   },
   {
     q: "Is this Solid?",
@@ -40,10 +41,36 @@ const FAQ_ITEMS: QA[] = [
           Solid
         </a>{" "}
         — the open web standard Tim Berners-Lee started in 2016 to give people back ownership
-        of their data. Mind adds a small shared rulebook (the Mind Protocol) so a whole family
-        of apps and agents can work together on your one pod.
+        of their data. No blockchain, no new infrastructure — just the web (HTTP and URLs). Mind
+        adds a small shared rulebook (the Mind Protocol) so a whole family of apps and agents can
+        work together on your one pod.
       </>
     ),
+  },
+];
+
+const STATS: { value: string; label: string }[] = [
+  { value: "12", label: "apps live today" },
+  { value: "1", label: "sign-in for all of them" },
+  { value: "0", label: "copies on a vendor's server" },
+  { value: "∞", label: "hosts you can move to" },
+];
+
+const STEPS: { n: string; title: string; body: string }[] = [
+  {
+    n: "01",
+    title: "Create your pod",
+    body: "Sign up in seconds and get a private space on the web that's yours — free during the alpha.",
+  },
+  {
+    n: "02",
+    title: "Sign in once",
+    body: "Your WebID is one identity for every app. Apps never see your password — you log in at your own pod.",
+  },
+  {
+    n: "03",
+    title: "Open any app",
+    body: "Every app reads and writes the same pod, so your data follows you — and you can swap any app anytime.",
   },
 ];
 
@@ -92,6 +119,24 @@ export default function HomePage() {
           <PodConstellation />
         </div>
       </section>
+
+      {/* ---- Stat band (a HUD readout of the proposition) ------------------ */}
+      <Section className="!py-8">
+        <Reveal>
+          <dl className="glass-panel grid grid-cols-2 gap-px overflow-hidden rounded-2xl md:grid-cols-4">
+            {STATS.map((s) => (
+              <div key={s.label} className="flex flex-col items-center gap-1 px-4 py-7 text-center">
+                <dt className="font-display text-4xl font-semibold leading-none text-primary md:text-5xl">
+                  {s.value}
+                </dt>
+                <dd className="mt-2 max-w-[16ch] text-xs text-muted-foreground md:text-sm">
+                  {s.label}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </Reveal>
+      </Section>
 
       {/* ---- The inversion ------------------------------------------------- */}
       <Section>
@@ -149,47 +194,112 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* ---- One pod, many apps ------------------------------------------- */}
+      {/* ---- AI that remembers you, not a vendor --------------------------- */}
       <Section>
         <div className="grid items-center gap-10 md:grid-cols-2">
           <Reveal>
             <SectionHeading
-              eyebrow="One source of truth"
-              title="One pod, many apps"
-              lead="Because your data lives in one place, every app sees the same information. “Family Dinner — Sat 19:00” shows up in your calendar, gets referenced by your assistant when it drafts a reply, and travels with you when you switch apps next year."
+              eyebrow="The wedge"
+              title="AI that remembers you — not a vendor."
+              lead="Today's assistants are vendor-locked: ChatGPT's memory lives with OpenAI, Claude's with Anthropic. Switch, and you start over. Mind flips it — your agents' memory lives in your pod. Swap the model or the runtime; everything they've learned about you stays put."
             />
             <Button asChild variant="outline" className="mt-7">
-              <Link href="/how-it-works">See how it works</Link>
+              <a href={DOCS_URL}>Read the architecture →</a>
             </Button>
           </Reveal>
           <Reveal delay={120}>
-            <div className="glass-panel card-grad overflow-hidden rounded-2xl">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/launcher.png"
-                alt="The Mind app launcher — a grid of apps that all read and write the same pod."
-                className="w-full"
-                loading="lazy"
-              />
+            <div className="tile card-grad h-full p-6">
+              <div className="grid gap-4">
+                <div className="rounded-xl border border-border p-4">
+                  <p className="eyebrow mb-2">Typical AI</p>
+                  <p className="font-mono text-xs text-muted-foreground">
+                    you → assistant → <span className="text-foreground/80">vendor's memory store</span>
+                  </p>
+                  <p className="mt-3 text-sm text-muted-foreground">
+                    Leave the vendor and the memory stays behind. You're renting your assistant's
+                    personality.
+                  </p>
+                </div>
+                <div className="rounded-xl border border-primary/50 bg-primary/5 p-4">
+                  <p className="eyebrow mb-2" style={{ color: "var(--primary)" }}>
+                    Mind agents
+                  </p>
+                  <p className="font-mono text-xs">
+                    you → agents →{" "}
+                    <span className="rounded border border-primary/60 bg-primary/10 px-1.5 py-0.5 text-primary">
+                      your pod
+                    </span>
+                  </p>
+                  <p className="mt-3 text-sm text-muted-foreground">
+                    The runtime is replaceable; the memory is yours. The same primitive that holds
+                    your files holds what your AI knows.
+                  </p>
+                </div>
+              </div>
             </div>
           </Reveal>
         </div>
       </Section>
 
-      {/* ---- App teaser ---------------------------------------------------- */}
+      {/* ---- One pod, many apps ------------------------------------------- */}
+      <Section>
+        <div className="grid items-center gap-10 md:grid-cols-2">
+          <Reveal delay={120} className="md:order-2">
+            <LauncherMock />
+          </Reveal>
+          <Reveal className="md:order-1">
+            <SectionHeading
+              eyebrow="One source of truth"
+              title="One pod, many apps"
+              lead="Because your data lives in one place, every app sees the same information. “Family dinner — Sat 19:00” shows up in your calendar, gets referenced by your assistant when it drafts a reply, and travels with you when you switch apps next year."
+            />
+            <Button asChild variant="outline" className="mt-7">
+              <Link href="/how-it-works">See how it works</Link>
+            </Button>
+          </Reveal>
+        </div>
+      </Section>
+
+      {/* ---- App suite ----------------------------------------------------- */}
       <Section>
         <Reveal>
           <div className="flex flex-wrap items-end justify-between gap-4">
-            <SectionHeading eyebrow="The family" title="Apps that live on your pod" />
+            <SectionHeading
+              eyebrow="The family"
+              title="A whole suite, living on your pod"
+              lead="Storage, documents, messaging, a calendar, your photos, your passwords — and an AI team. Every one of them reads and writes the same pod, so they all speak to each other for free."
+            />
             <Button asChild variant="ghost">
               <Link href="/apps">All apps →</Link>
             </Button>
           </div>
         </Reveal>
         <div className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {LIVE_APPS.map((app, i) => (
-            <Reveal key={app.name} delay={i * 80}>
+          {LIVE_APPS.slice(0, 8).map((app, i) => (
+            <Reveal key={app.name} delay={i * 60}>
               <AppCard app={app} />
+            </Reveal>
+          ))}
+        </div>
+      </Section>
+
+      {/* ---- How it works (three steps) ----------------------------------- */}
+      <Section>
+        <Reveal>
+          <SectionHeading
+            eyebrow="Get started"
+            title="From stranger to pod owner in three steps"
+            align="center"
+          />
+        </Reveal>
+        <div className="mt-10 grid gap-5 md:grid-cols-3">
+          {STEPS.map((s, i) => (
+            <Reveal key={s.n} delay={i * 90}>
+              <div className="tile h-full p-6">
+                <p className="font-mono text-sm text-primary">{s.n}</p>
+                <h3 className="mt-4 font-display text-lg font-semibold">{s.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{s.body}</p>
+              </div>
             </Reveal>
           ))}
         </div>

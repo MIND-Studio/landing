@@ -13,9 +13,17 @@
  */
 
 :root {
-  --font-display: var(--font-fraunces), "Iowan Old Style", Georgia, serif;
-  --font-body: var(--font-hanken), ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-mono: var(--font-jb), ui-monospace, "SF Mono", Menlo, monospace;
+  --font-display: var(--font-display-src), "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-body-src), "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-mono-src), ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Rebind the @mind-studio/ui font tokens (which default to *system* fonts) to
+     our loaded webfonts, so Button / Accordion / Card render in the brand type
+     rather than falling back to the OS font. These cascade into --font-sans etc.
+     inside the design-system stylesheet. Defined after the import so they win. */
+  --mind-font-sans: var(--font-body);
+  --mind-font-serif: var(--font-display);
+  --mind-font-mono: var(--font-mono);
 }
 
 /* Make the @mind-studio/ui component utilities (font-sans / font-mono) use our type. */

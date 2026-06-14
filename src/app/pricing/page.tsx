@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const INCLUDED = [
   "A hosted pod on mindpods.org",
   "Your own WebID — one sign-in across every Mind app",
-  "Dock, Drive, Builder and Codespaces",
+  "All twelve live apps — Drive, Chat, Calendar, Photos and more",
   "Per-folder privacy controls",
   "Move your pod elsewhere anytime",
 ];

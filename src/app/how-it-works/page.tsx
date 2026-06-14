@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 const SIGN_IN_STEPS = [
-  { n: "01", h: "You click “Sign in” on an app.", d: "Say, the Marketplace." },
+  { n: "01", h: "You click “Sign in” on an app.", d: "Say, Drive or Chat." },
   { n: "02", h: "The app asks: what's your pod?", d: "You point it at your pod — the same one, every time." },
   { n: "03", h: "The app sends you to your pod's login page.", d: "Same shape as “Sign in with Google,” except the identity is yours, not a platform's." },
   { n: "04", h: "You log in at your pod.", d: "Password, passkey, or hardware key. Your pod host handles it — the app never sees your credentials." },

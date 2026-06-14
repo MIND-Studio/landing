@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "@mind-studio/ui";
 import { mind } from "@mind-studio/ui/themes";
 import { SiteNav } from "@/components/site-nav";
@@ -7,11 +7,13 @@ import { SiteFooter } from "@/components/site-footer";
 import "./globals.css";
 import { version as buildVersion } from "../../package.json";
 
-// Distinctive type: a soft optical serif for display, a warm grotesque for body,
-// a mono for micro-labels. Exposed as CSS vars consumed in globals.css.
-const display = Fraunces({ subsets: ["latin"], variable: "--font-fraunces", display: "swap" });
-const body = Hanken_Grotesk({ subsets: ["latin"], variable: "--font-hanken", display: "swap" });
-const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jb", display: "swap" });
+// Futuristic, professional type: a geometric grotesk for display, a neutral
+// workhorse sans for body, JetBrains Mono for the HUD micro-labels. Exposed as
+// CSS vars; globals.css rebinds the @mind-studio/ui font tokens to these so the
+// UI primitives (Button, Accordion …) render in the brand type, not system font.
+const display = Space_Grotesk({ subsets: ["latin"], variable: "--font-display-src", display: "swap" });
+const body = Inter({ subsets: ["latin"], variable: "--font-body-src", display: "swap" });
+const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono-src", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mindpods.org"),
@@ -33,8 +35,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" data-mind-theme="mind" data-build={buildVersion} suppressHydrationWarning>
-      <body className={`${display.variable} ${body.variable} ${mono.variable}`}>
+    <html
+      lang="en"
+      data-mind-theme="mind"
+      data-build={buildVersion}
+      // Font vars must live on :root (the <html> element) so the derived
+      // --font-* / --mind-font-* tokens composed in globals.css :root can resolve
+      // them; on <body> they'd be out of scope and collapse to the UA serif.
+      className={`${display.variable} ${body.variable} ${mono.variable}`}
+      suppressHydrationWarning
+    >
+      <body>
         <ThemeProvider
           theme={mind}
           defaultTheme="dark"

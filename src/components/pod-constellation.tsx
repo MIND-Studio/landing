@@ -11,8 +11,8 @@
  * from --i / --n. Styles live in globals.css (.pc-*). Respects reduced motion.
  */
 
-const INNER = ["Dock", "Drive", "Builder", "Codespaces"];
-const OUTER = ["Agents", "Chat", "Social", "Docs", "Calendar", "Todo"];
+const INNER = ["Drive", "Chat", "Calendar", "Photos"];
+const OUTER = ["Dock", "Notes", "Slides", "Agents", "Codespaces", "Whiteboard"];
 
 function Ring({
   apps,
@@ -46,7 +46,7 @@ function Ring({
 
 export function PodConstellation() {
   return (
-    <div className="pc-stage" role="img" aria-label="Your pod at the center, with Mind apps — Dock, Drive, Builder, Codespaces, Agents, Chat and more — orbiting it.">
+    <div className="pc-stage" role="img" aria-label="Your pod at the center, with Mind apps — Drive, Chat, Calendar, Photos, Dock, Notes, Agents and more — orbiting it.">
       <Ring apps={OUTER} variant="outer" />
       <Ring apps={INNER} variant="inner" />
       <div className="pc-core">
