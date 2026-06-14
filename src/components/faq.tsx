@@ -17,7 +17,7 @@ export function Faq({ items }: { items: QA[] }) {
           <AccordionTrigger className="text-left text-base font-medium">
             {item.q}
           </AccordionTrigger>
-          <AccordionContent className="text-base text-muted-foreground">
+          <AccordionContent className="pt-2 text-base text-muted-foreground">
             {item.a}
           </AccordionContent>
         </AccordionItem>
