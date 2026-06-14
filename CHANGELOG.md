@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/MIND-Studio/landing/compare/v0.1.4...v0.2.0) (2026-06-14)
+
+
+### Features
+
+* revamp homepage launcher, expand app catalog, add mobile nav ([#5](https://github.com/MIND-Studio/landing/issues/5)) ([ea74cf2](https://github.com/MIND-Studio/landing/commit/ea74cf292867e69e8b6c524bddd87b917a342e21))
+
 ## [0.1.4](https://github.com/MIND-Studio/landing/compare/v0.1.3...v0.1.4) (2026-06-07)
 
 
