@@ -5,9 +5,10 @@ import { cn } from "@/lib/cn";
 
 /**
  * Frames a self-contained Mind diagram SVG (authored by the mind-graphic skill,
- * living in /public/diagrams) and gives it a "live HUD" feel: a soft cyan glow
- * that tracks the pointer behind the panel, plus a gentle lift on hover. The SVG
- * already carries its own dark panel + border, so we don't double-frame it — we
+ * living in /public/diagrams) and gives it a "live" feel: a soft emerald glow
+ * (the brand --primary) that tracks the pointer behind the panel, plus a gentle
+ * lift on hover. The SVG carries its own dark panel + border, so we don't
+ * double-frame it — we
  * only add the ambient halo around it. Pointer tracking is a progressive
  * enhancement; with no JS / reduced motion the figure is just a crisp static image.
  */
