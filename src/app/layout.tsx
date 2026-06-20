@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
+import { Fraunces, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "@mind-studio/ui";
 import { mind } from "@mind-studio/ui/themes";
 import { SiteNav } from "@/components/site-nav";
@@ -7,13 +7,14 @@ import { SiteFooter } from "@/components/site-footer";
 import "./globals.css";
 import { version as buildVersion } from "../../package.json";
 
-// Futuristic, professional type: a geometric grotesk for display, a neutral
-// workhorse sans for body, JetBrains Mono for the HUD micro-labels. Exposed as
-// CSS vars; globals.css rebinds the @mind-studio/ui font tokens to these so the
-// UI primitives (Button, Accordion …) render in the brand type, not system font.
-const display = Space_Grotesk({ subsets: ["latin"], variable: "--font-display-src", display: "swap" });
-const body = Inter({ subsets: ["latin"], variable: "--font-body-src", display: "swap" });
-const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono-src", display: "swap" });
+// Fleet type (ui ^0.4.0): Fraunces display, Hanken Grotesk body, JetBrains Mono
+// for the HUD micro-labels — mirroring the rest of the Mind fleet so the
+// marketing site shares the dock's type. Exposed as CSS vars; globals.css
+// rebinds the @mind-studio/ui font tokens to these so the UI primitives
+// (Button, Accordion …) render in the brand type, not system font.
+const display = Fraunces({ subsets: ["latin"], variable: "--font-fraunces", display: "swap" });
+const body = Hanken_Grotesk({ subsets: ["latin"], variable: "--font-hanken", display: "swap" });
+const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jb", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mindpods.org"),
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       // --font-* / --mind-font-* tokens composed in globals.css :root can resolve
       // them; on <body> they'd be out of scope and collapse to the UA serif.
       className={`${display.variable} ${body.variable} ${mono.variable}`}
+      // ^ exposes --font-fraunces / --font-hanken / --font-jb on :root
       suppressHydrationWarning
     >
       <body>
