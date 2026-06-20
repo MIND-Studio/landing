@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { Symbol } from "@mind-studio/ui";
+import Link from "next/link";
 import { DOCK_URL, DOCS_URL, POD_REGISTER_URL, SOLID_URL } from "@/lib/links";
 
 const COLUMNS = [
@@ -39,8 +39,8 @@ export function SiteFooter() {
               <span className="font-display text-base font-semibold">Mind</span>
             </div>
             <p className="max-w-xs text-sm text-muted-foreground">
-              Your data. Your apps. Your AI. A privacy-first home for your data — by
-              architecture, not by promise.
+              Your data. Your apps. Your AI. A privacy-first home for your data — by architecture,
+              not by promise.
             </p>
           </div>
 

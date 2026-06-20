@@ -11,7 +11,13 @@ export function Section({
   width?: "wide" | "narrow";
 }) {
   return (
-    <section className={cn("mx-auto px-5 py-16 md:py-20", width === "narrow" ? "max-w-3xl" : "max-w-6xl", className)}>
+    <section
+      className={cn(
+        "mx-auto px-5 py-16 md:py-20",
+        width === "narrow" ? "max-w-3xl" : "max-w-6xl",
+        className,
+      )}
+    >
       {children}
     </section>
   );

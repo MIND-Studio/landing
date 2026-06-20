@@ -1,13 +1,13 @@
-import Link from "next/link";
 import { Button } from "@mind-studio/ui";
+import Link from "next/link";
+import { AppCard } from "@/components/app-card";
 import { Badge } from "@/components/badge";
+import { CtaButtons } from "@/components/cta-buttons";
+import { Faq, type QA } from "@/components/faq";
+import { LauncherMock } from "@/components/launcher-mock";
 import { PodConstellation } from "@/components/pod-constellation";
 import { Reveal } from "@/components/reveal";
-import { CtaButtons } from "@/components/cta-buttons";
 import { Section, SectionHeading } from "@/components/section";
-import { AppCard } from "@/components/app-card";
-import { LauncherMock } from "@/components/launcher-mock";
-import { Faq, type QA } from "@/components/faq";
 import { LIVE_APPS } from "@/lib/apps";
 import { DOCS_URL, SOLID_URL } from "@/lib/links";
 
@@ -40,10 +40,10 @@ const FAQ_ITEMS: QA[] = [
         <a className="text-primary underline-offset-4 hover:underline" href={SOLID_URL}>
           Solid
         </a>{" "}
-        — the open web standard Tim Berners-Lee started in 2016 to give people back ownership
-        of their data. No blockchain, no new infrastructure — just the web (HTTP and URLs). Mind
-        adds a small shared rulebook (the Mind Protocol) so a whole family of apps and agents can
-        work together on your one pod.
+        — the open web standard Tim Berners-Lee started in 2016 to give people back ownership of
+        their data. No blockchain, no new infrastructure — just the web (HTTP and URLs). Mind adds a
+        small shared rulebook (the Mind Protocol) so a whole family of apps and agents can work
+        together on your one pod.
       </>
     ),
   },
@@ -98,20 +98,22 @@ export default function HomePage() {
           className="reveal font-display mx-auto mt-7 max-w-4xl text-balance text-5xl font-semibold leading-[1.02] tracking-tight md:text-7xl"
           style={{ animationDelay: "80ms" }}
         >
-          Your data. Your apps.{" "}
-          <span className="headline-accent">Your AI.</span>
+          Your data. Your apps. <span className="headline-accent">Your AI.</span>
         </h1>
 
         <p
           className="reveal mx-auto mt-6 max-w-2xl text-balance text-lg text-muted-foreground md:text-xl"
           style={{ animationDelay: "160ms" }}
         >
-          A privacy-first home for your data — one place you own, where your apps and AI agents
-          all work together. Switch apps, your data stays.
+          A privacy-first home for your data — one place you own, where your apps and AI agents all
+          work together. Switch apps, your data stays.
         </p>
 
         <CtaButtons className="reveal mt-9 justify-center" />
-        <p className="reveal mt-4 text-sm text-muted-foreground" style={{ animationDelay: "320ms" }}>
+        <p
+          className="reveal mt-4 text-sm text-muted-foreground"
+          style={{ animationDelay: "320ms" }}
+        >
           Free during the alpha · an early prototype · your data never leaves your control
         </p>
 
@@ -173,21 +175,28 @@ export default function HomePage() {
             </div>
           </Reveal>
           <Reveal delay={140}>
-            <div className="tile card-grad h-full p-6" style={{ borderColor: "color-mix(in oklch, var(--primary) 45%, transparent)" }}>
+            <div
+              className="tile card-grad h-full p-6"
+              style={{ borderColor: "color-mix(in oklch, var(--primary) 45%, transparent)" }}
+            >
               <p className="eyebrow mb-3" style={{ color: "var(--primary)" }}>
                 With pods
               </p>
               <h3 className="font-display text-xl font-semibold">You own your data</h3>
               <div className="mt-5 flex flex-wrap items-center gap-2 font-mono text-xs">
                 {["Mail", "Notes", "Calendar", "AI"].map((a) => (
-                  <span key={a} className="rounded border border-border px-2 py-1">{a}</span>
+                  <span key={a} className="rounded border border-border px-2 py-1">
+                    {a}
+                  </span>
                 ))}
                 <span className="opacity-40">↘</span>
-                <span className="rounded-md border border-primary/60 bg-primary/10 px-2.5 py-1 text-primary">your pod</span>
+                <span className="rounded-md border border-primary/60 bg-primary/10 px-2.5 py-1 text-primary">
+                  your pod
+                </span>
               </div>
               <p className="mt-5 text-sm text-muted-foreground">
-                One copy of your data, in storage you own. Apps just visit — and you can swap any
-                of them without losing a thing.
+                One copy of your data, in storage you own. Apps just visit — and you can swap any of
+                them without losing a thing.
               </p>
             </div>
           </Reveal>
@@ -213,7 +222,8 @@ export default function HomePage() {
                 <div className="rounded-xl border border-border p-4">
                   <p className="eyebrow mb-2">Typical AI</p>
                   <p className="font-mono text-xs text-muted-foreground">
-                    you → assistant → <span className="text-foreground/80">vendor's memory store</span>
+                    you → assistant →{" "}
+                    <span className="text-foreground/80">vendor's memory store</span>
                   </p>
                   <p className="mt-3 text-sm text-muted-foreground">
                     Leave the vendor and the memory stays behind. You're renting your assistant's
@@ -318,10 +328,10 @@ export default function HomePage() {
             Tim Berners-Lee · London 2012 — on the web he invented for all
           </p>
           <p className="mx-auto mt-7 max-w-2xl text-lg text-muted-foreground">
-            Two decades on, the same web is fenced off — your data sits in vendors' databases.
-            Mind is the next move of “for everyone”: this time the line we draw is that{" "}
-            <span className="text-foreground">privacy is also for everyone</span> — by
-            architecture, not by toggle, not by a trust-us promise.
+            Two decades on, the same web is fenced off — your data sits in vendors' databases. Mind
+            is the next move of “for everyone”: this time the line we draw is that{" "}
+            <span className="text-foreground">privacy is also for everyone</span> — by architecture,
+            not by toggle, not by a trust-us promise.
           </p>
           <Button asChild variant="link" className="mt-4">
             <a href={DOCS_URL}>Read the architecture →</a>

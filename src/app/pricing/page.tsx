@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import { Button } from "@mind-studio/ui";
+import type { Metadata } from "next";
 import { Badge } from "@/components/badge";
 import { Section, SectionHeading } from "@/components/section";
 import { POD_REGISTER_URL } from "@/lib/links";
@@ -39,8 +39,8 @@ export default function PricingPage() {
             <span className="text-muted-foreground">during the alpha</span>
           </div>
           <p className="mt-4 max-w-md text-muted-foreground">
-            Everything you need to live on your own pod, hosted for you so there's nothing to
-            set up. Expect rough edges — this is our first prototype, and your feedback shapes it.
+            Everything you need to live on your own pod, hosted for you so there's nothing to set
+            up. Expect rough edges — this is our first prototype, and your feedback shapes it.
           </p>
 
           <ul className="mt-7 space-y-3">
@@ -65,15 +65,15 @@ export default function PricingPage() {
           <div className="tile p-6">
             <h3 className="font-display text-lg font-semibold">Paid plans, later</h3>
             <p className="mt-2 text-sm text-muted-foreground">
-              As Mind grows we'll offer paid hosted plans with more storage, backups, and
-              recovery. Alpha pods won't be left behind.
+              As Mind grows we'll offer paid hosted plans with more storage, backups, and recovery.
+              Alpha pods won't be left behind.
             </p>
           </div>
           <div className="tile p-6">
             <h3 className="font-display text-lg font-semibold">Or host it yourself</h3>
             <p className="mt-2 text-sm text-muted-foreground">
-              Hosting is always a choice, never a lock-in. Run your pod on your own VPS, a
-              community server, a friend's box, or your laptop — and move it whenever you like.
+              Hosting is always a choice, never a lock-in. Run your pod on your own VPS, a community
+              server, a friend's box, or your laptop — and move it whenever you like.
             </p>
           </div>
         </div>

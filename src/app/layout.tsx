@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
-import { Fraunces, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "@mind-studio/ui";
 import { mind } from "@mind-studio/ui/themes";
-import { SiteNav } from "@/components/site-nav";
+import type { Metadata } from "next";
+import { Fraunces, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
+import { SiteNav } from "@/components/site-nav";
 import "./globals.css";
 import { version as buildVersion } from "../../package.json";
 

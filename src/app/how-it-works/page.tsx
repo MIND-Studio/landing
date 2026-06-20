@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Section, SectionHeading } from "@/components/section";
 import { CtaButtons } from "@/components/cta-buttons";
+import { Section, SectionHeading } from "@/components/section";
 import { SOLID_URL } from "@/lib/links";
 
 export const metadata: Metadata = {
@@ -11,17 +11,41 @@ export const metadata: Metadata = {
 
 const SIGN_IN_STEPS = [
   { n: "01", h: "You click “Sign in” on an app.", d: "Say, Drive or Chat." },
-  { n: "02", h: "The app asks: what's your pod?", d: "You point it at your pod — the same one, every time." },
-  { n: "03", h: "The app sends you to your pod's login page.", d: "Same shape as “Sign in with Google,” except the identity is yours, not a platform's." },
-  { n: "04", h: "You log in at your pod.", d: "Password, passkey, or hardware key. Your pod host handles it — the app never sees your credentials." },
-  { n: "05", h: "You're back in the app, signed in.", d: "It can now read and write only the folders you granted — typically its own." },
+  {
+    n: "02",
+    h: "The app asks: what's your pod?",
+    d: "You point it at your pod — the same one, every time.",
+  },
+  {
+    n: "03",
+    h: "The app sends you to your pod's login page.",
+    d: "Same shape as “Sign in with Google,” except the identity is yours, not a platform's.",
+  },
+  {
+    n: "04",
+    h: "You log in at your pod.",
+    d: "Password, passkey, or hardware key. Your pod host handles it — the app never sees your credentials.",
+  },
+  {
+    n: "05",
+    h: "You're back in the app, signed in.",
+    d: "It can now read and write only the folders you granted — typically its own.",
+  },
 ];
 
 const HOSTS = [
   { icon: "⌂", name: "A home box", desc: "A Raspberry Pi, NAS, or mini-PC in your house." },
   { icon: "☁", name: "Your VPS", desc: "A cheap virtual server you rent." },
-  { icon: "◆", name: "A commercial host", desc: "Pod-as-a-service like mindpods.org — pay monthly, leave anytime." },
-  { icon: "▲", name: "A community server", desc: "A local non-profit running shared pod infrastructure." },
+  {
+    icon: "◆",
+    name: "A commercial host",
+    desc: "Pod-as-a-service like mindpods.org — pay monthly, leave anytime.",
+  },
+  {
+    icon: "▲",
+    name: "A community server",
+    desc: "A local non-profit running shared pod infrastructure.",
+  },
   { icon: "◉", name: "A friend's box", desc: "Someone you trust with spare server capacity." },
   { icon: "▢", name: "Your laptop", desc: "Local-first, sync up when you're online." },
 ];
@@ -45,9 +69,9 @@ export default function HowItWorksPage() {
             <h2 className="font-display text-2xl font-semibold tracking-tight">Your pod</h2>
             <p className="mt-3 text-muted-foreground">
               A pod is a personal data store on the web — “your own private cloud, but tiny and
-              yours.” It looks like a folder: shared spaces for your calendar, contacts and
-              photos, plus a private sandbox for each app you use. Each item has its own access
-              rules, so you decide who sees what.
+              yours.” It looks like a folder: shared spaces for your calendar, contacts and photos,
+              plus a private sandbox for each app you use. Each item has its own access rules, so
+              you decide who sees what.
             </p>
             <p className="mt-3 text-muted-foreground">
               Apps can read your <em>shared</em> data (so a date you wrote in one app shows up in
@@ -57,16 +81,32 @@ export default function HowItWorksPage() {
           <div className="tile p-6 font-mono text-sm">
             <div className="text-primary">you.mindpods.org/</div>
             <ul className="mt-3 space-y-1 text-muted-foreground">
-              <li>├─ profile/card <span className="opacity-60"># who you are</span></li>
-              <li>├─ calendar/ <span className="opacity-60"># your events</span></li>
-              <li>├─ contacts/ <span className="opacity-60"># your address book</span></li>
-              <li>├─ photos/ <span className="opacity-60"># your images</span></li>
-              <li>├─ inbox/ <span className="opacity-60"># messages from other pods</span></li>
-              <li>├─ agents/ <span className="opacity-60"># your AI agents</span></li>
-              <li>└─ apps/ <span className="opacity-60"># a sandbox per app</span></li>
+              <li>
+                ├─ profile/card <span className="opacity-60"># who you are</span>
+              </li>
+              <li>
+                ├─ calendar/ <span className="opacity-60"># your events</span>
+              </li>
+              <li>
+                ├─ contacts/ <span className="opacity-60"># your address book</span>
+              </li>
+              <li>
+                ├─ photos/ <span className="opacity-60"># your images</span>
+              </li>
+              <li>
+                ├─ inbox/ <span className="opacity-60"># messages from other pods</span>
+              </li>
+              <li>
+                ├─ agents/ <span className="opacity-60"># your AI agents</span>
+              </li>
+              <li>
+                └─ apps/ <span className="opacity-60"># a sandbox per app</span>
+              </li>
             </ul>
             <div className="mt-4 flex gap-4 text-xs">
-              <span><span className="text-primary">▍</span> shared — apps you trust can read</span>
+              <span>
+                <span className="text-primary">▍</span> shared — apps you trust can read
+              </span>
             </div>
           </div>
         </div>
@@ -89,8 +129,8 @@ export default function HowItWorksPage() {
           ))}
         </ol>
         <p className="mt-6 max-w-2xl text-muted-foreground">
-          Sign in to two apps and they read different folders in the same pod — but it's still
-          one you. That's standard{" "}
+          Sign in to two apps and they read different folders in the same pod — but it's still one
+          you. That's standard{" "}
           <a className="text-primary underline-offset-4 hover:underline" href={SOLID_URL}>
             Solid
           </a>{" "}
