@@ -156,6 +156,47 @@ body {
   border: 1px solid var(--border);
 }
 
+/* ---- figure panel — a Mind diagram SVG with a pointer-tracking halo ------
+   The SVG already carries its own dark panel + cyan accents, so we don't wrap
+   it in another border. Instead a soft teal glow sits *behind* the image and
+   follows the cursor, making the diagram feel like a live HUD surface. */
+.figure-panel {
+  --mx: 50%;
+  --my: 50%;
+  position: relative;
+  border-radius: 18px;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.figure-panel::before {
+  content: "";
+  position: absolute;
+  inset: -8%;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(
+    34% 44% at var(--mx) var(--my),
+    color-mix(in oklch, var(--primary) 36%, transparent),
+    transparent 70%
+  );
+  opacity: 0.45;
+  filter: blur(26px);
+  transition: opacity 0.35s ease;
+}
+.figure-panel:hover {
+  transform: translateY(-3px);
+}
+.figure-panel:hover::before {
+  opacity: 0.95;
+}
+.figure-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  /* a hair of depth under the SVG's own border so it reads as a physical card */
+  box-shadow: 0 24px 60px -28px rgba(0, 0, 0, 0.8);
+}
+
 /* ---- .mind-mark — animated wordmark -------------------------------------
    Ported from architecture/shared/brand.css. "Decentralized Network In Mind"
    → the four cyan initials fly together into MIND. CSS-only; self-contained
@@ -512,10 +553,12 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .aurora, .reveal, .float-y, .tile, .tile-arrow, .starfield,
-  .pc-ring, .pc-spin, .pc-mote, .pc-core, .pc-core-ring, .kicker-dot {
+  .pc-ring, .pc-spin, .pc-mote, .pc-core, .pc-core-ring, .kicker-dot,
+  .figure-panel, .figure-panel::before {
     animation: none !important;
     transition: none !important;
   }
+  .figure-panel:hover { transform: none; }
   .reveal { opacity: 1; }
   .reveal-up { opacity: 1 !important; transform: none !important; }
   .pc-mote { opacity: 0; }

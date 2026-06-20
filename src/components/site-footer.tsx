@@ -22,7 +22,7 @@ const COLUMNS = [
   {
     title: "Get started",
     links: [
-      { href: POD_REGISTER_URL, label: "Create your pod", external: true },
+      { href: POD_REGISTER_URL, label: "Create your space", external: true },
       { href: DOCK_URL, label: "Sign in", external: true },
     ],
   },
@@ -39,8 +39,8 @@ export function SiteFooter() {
               <span className="font-display text-base font-semibold">Mind</span>
             </div>
             <p className="max-w-xs text-sm text-muted-foreground">
-              Your data. Your apps. Your AI. A privacy-first home for your data — by architecture,
-              not by promise.
+              Your data. Your apps. Your AI. One private space on the web that's truly yours —
+              privacy built in, not promised.
             </p>
           </div>
 

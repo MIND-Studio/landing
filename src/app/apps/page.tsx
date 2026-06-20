@@ -8,7 +8,7 @@ import { LIVE_APPS, SOON_APPS } from "@/lib/apps";
 export const metadata: Metadata = {
   title: "Apps",
   description:
-    "The Mind app family — twelve apps live now, from Drive and Chat to Calendar, Photos and Codespaces, with Agents, Compass and more on the way. Every app reads and writes the same pod.",
+    "The Mind app family — twelve apps live now, from Drive and Chat to Calendar, Photos and Codespaces, with Agents, Compass and more on the way. Every app works from the same space that's yours.",
 };
 
 export default function AppsPage() {
@@ -17,8 +17,8 @@ export default function AppsPage() {
       <Section className="pb-6 text-center md:pt-20">
         <SectionHeading
           eyebrow="The family"
-          title="One pod. A whole family of apps."
-          lead="Every Mind app reads and writes the same pod — your single source of truth. Sign in once and your data follows you from app to app. New apps don't fragment your data; they add to it."
+          title="One space. A whole family of apps."
+          lead="Every Mind app works from the same space — the one that's yours. Sign in once and your things follow you from app to app. A new app doesn't scatter your stuff; it just adds to what's already there."
           align="center"
         />
       </Section>
@@ -41,7 +41,7 @@ export default function AppsPage() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/drive.png"
-              alt="Drive — a file browser for your pod."
+              alt="Drive — all your files in one space that's yours."
               className="w-full"
               loading="lazy"
             />
@@ -55,8 +55,8 @@ export default function AppsPage() {
           <span className="h-px flex-1 bg-border" />
         </div>
         <p className="mt-3 max-w-2xl text-muted-foreground">
-          The rest of the family from the Mind spec. They all speak the same protocol — adding a new
-          app means writing one that reads your pod, not getting approved by a platform.
+          The rest of the family that's on the way. They all work the same way — a new app just
+          reads and writes your space, with no platform deciding whether it's allowed.
         </p>
         <div className="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {SOON_APPS.map((app) => (
@@ -66,7 +66,7 @@ export default function AppsPage() {
       </Section>
 
       <Section className="text-center">
-        <SectionHeading title="Start with one app. Keep your data forever." align="center" />
+        <SectionHeading title="Start with one app. Keep your things forever." align="center" />
         <CtaButtons className="mt-8 justify-center" />
       </Section>
     </>

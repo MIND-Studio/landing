@@ -16,7 +16,7 @@ export function CtaButtons({
   return (
     <div className={`flex flex-wrap items-center gap-3 ${className}`}>
       <Button asChild size="lg" className="btn-glow">
-        <a href={POD_REGISTER_URL}>Create your pod</a>
+        <a href={POD_REGISTER_URL}>Create your space</a>
       </Button>
       {showSignIn && (
         <Button asChild size="lg" variant="outline">

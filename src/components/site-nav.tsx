@@ -35,7 +35,7 @@ export function SiteNav() {
             <a href={DOCK_URL}>Sign in</a>
           </Button>
           <Button asChild size="sm">
-            <a href={POD_REGISTER_URL}>Create your pod</a>
+            <a href={POD_REGISTER_URL}>Create your space</a>
           </Button>
 
           {/* Mobile menu — a zero-JS <details> disclosure so the nav stays a server

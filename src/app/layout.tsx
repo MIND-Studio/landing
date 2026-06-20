@@ -23,11 +23,11 @@ export const metadata: Metadata = {
     template: "%s · Mind",
   },
   description:
-    "A privacy-first home for your data — one place you own, where your apps and AI agents all work together. Create a pod on mindpods.org.",
+    "One private space on the web that's truly yours — where all your apps and AI helpers work together. Set up your space free at mindpods.org.",
   openGraph: {
     title: "Mind — your data, your apps, your AI",
     description:
-      "A privacy-first home for your data — one place you own, where your apps and AI agents all work together.",
+      "One private space on the web that's truly yours — where all your apps and AI helpers work together.",
     url: "https://mindpods.org",
     siteName: "Mind",
     type: "website",

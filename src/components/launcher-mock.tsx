@@ -11,7 +11,7 @@ export function LauncherMock({ className }: { className?: string }) {
     <div
       className={`glass-panel card-grad overflow-hidden rounded-2xl p-5 ${className ?? ""}`}
       role="img"
-      aria-label="The Mind app launcher — one grid of apps, all reading and writing the same pod."
+      aria-label="The Mind app launcher — one grid of apps, all working from the same space that's yours."
     >
       <div className="flex items-center justify-between">
         <span className="eyebrow">Your apps</span>
