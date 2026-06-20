@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/MIND-Studio/landing/compare/v0.3.0...v0.4.0) (2026-06-20)
+
+
+### Features
+
+* warmer, plain-language landing redesign with custom graphics ([#11](https://github.com/MIND-Studio/landing/issues/11)) ([2a34944](https://github.com/MIND-Studio/landing/commit/2a34944ee3121e05f183f780661f64b3f99deaef))
+
 ## [0.3.0](https://github.com/MIND-Studio/landing/compare/v0.2.0...v0.3.0) (2026-06-20)
 
 
