@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/MIND-Studio/landing/compare/v0.2.0...v0.3.0) (2026-06-20)
+
+
+### Features
+
+* adopt ui ^0.4.0 fonts ([#8](https://github.com/MIND-Studio/landing/issues/8)) ([4e172e4](https://github.com/MIND-Studio/landing/commit/4e172e41ea08e953af28ad5e3df072bb17f4458d))
+
 ## [0.2.0](https://github.com/MIND-Studio/landing/compare/v0.1.4...v0.2.0) (2026-06-14)
 
 
