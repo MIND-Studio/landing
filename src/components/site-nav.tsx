@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { Button, Symbol } from "@mind-studio/ui";
+import Link from "next/link";
 import { DOCK_URL, POD_REGISTER_URL } from "@/lib/links";
 
 const NAV = [

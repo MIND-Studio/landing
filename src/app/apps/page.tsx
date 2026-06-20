@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Section, SectionHeading } from "@/components/section";
 import { AppCard } from "@/components/app-card";
-import { LauncherMock } from "@/components/launcher-mock";
 import { CtaButtons } from "@/components/cta-buttons";
+import { LauncherMock } from "@/components/launcher-mock";
+import { Section, SectionHeading } from "@/components/section";
 import { LIVE_APPS, SOON_APPS } from "@/lib/apps";
 
 export const metadata: Metadata = {
@@ -39,7 +39,12 @@ export default function AppsPage() {
           <LauncherMock />
           <div className="glass-panel overflow-hidden rounded-2xl">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/drive.png" alt="Drive — a file browser for your pod." className="w-full" loading="lazy" />
+            <img
+              src="/drive.png"
+              alt="Drive — a file browser for your pod."
+              className="w-full"
+              loading="lazy"
+            />
           </div>
         </div>
       </Section>
@@ -50,8 +55,8 @@ export default function AppsPage() {
           <span className="h-px flex-1 bg-border" />
         </div>
         <p className="mt-3 max-w-2xl text-muted-foreground">
-          The rest of the family from the Mind spec. They all speak the same protocol — adding a
-          new app means writing one that reads your pod, not getting approved by a platform.
+          The rest of the family from the Mind spec. They all speak the same protocol — adding a new
+          app means writing one that reads your pod, not getting approved by a platform.
         </p>
         <div className="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {SOON_APPS.map((app) => (

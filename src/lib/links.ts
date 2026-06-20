@@ -20,17 +20,14 @@ export const POD_REGISTER_URL =
  */
 
 /** The post-login front door (the dock) — "Sign in". */
-export const DOCK_URL =
-  process.env.NEXT_PUBLIC_APP_DOCK_URL ?? "https://dock.apps.mindpods.org";
+export const DOCK_URL = process.env.NEXT_PUBLIC_APP_DOCK_URL ?? "https://dock.apps.mindpods.org";
 
-export const DRIVE_URL =
-  process.env.NEXT_PUBLIC_APP_DRIVE_URL ?? "https://drive.apps.mindpods.org";
+export const DRIVE_URL = process.env.NEXT_PUBLIC_APP_DRIVE_URL ?? "https://drive.apps.mindpods.org";
 
 export const BUILDER_URL =
   process.env.NEXT_PUBLIC_APP_BUILDER_URL ?? "https://builder.apps.mindpods.org";
 
-export const CHAT_URL =
-  process.env.NEXT_PUBLIC_APP_CHAT_URL ?? "https://chat.apps.mindpods.org";
+export const CHAT_URL = process.env.NEXT_PUBLIC_APP_CHAT_URL ?? "https://chat.apps.mindpods.org";
 
 export const WHITEBOARD_URL =
   process.env.NEXT_PUBLIC_APP_WHITEBOARD_URL ?? "https://whiteboard.apps.mindpods.org";
@@ -41,8 +38,7 @@ export const CALENDAR_URL =
 export const CONTACTS_URL =
   process.env.NEXT_PUBLIC_APP_CONTACTS_URL ?? "https://contacts.apps.mindpods.org";
 
-export const NOTES_URL =
-  process.env.NEXT_PUBLIC_APP_NOTES_URL ?? "https://notes.apps.mindpods.org";
+export const NOTES_URL = process.env.NEXT_PUBLIC_APP_NOTES_URL ?? "https://notes.apps.mindpods.org";
 
 export const PHOTOS_URL =
   process.env.NEXT_PUBLIC_APP_PHOTOS_URL ?? "https://photos.apps.mindpods.org";
@@ -50,15 +46,13 @@ export const PHOTOS_URL =
 export const SLIDES_URL =
   process.env.NEXT_PUBLIC_APP_SLIDES_URL ?? "https://slides.apps.mindpods.org";
 
-export const SHELL_URL =
-  process.env.NEXT_PUBLIC_APP_SHELL_URL ?? "https://shell.apps.mindpods.org";
+export const SHELL_URL = process.env.NEXT_PUBLIC_APP_SHELL_URL ?? "https://shell.apps.mindpods.org";
 
 export const CODESPACES_URL =
   process.env.NEXT_PUBLIC_APP_CODESPACES_URL ?? "https://codespaces.mindpods.org";
 
 /** The published architecture / protocol spec (external). */
 export const DOCS_URL =
-  process.env.NEXT_PUBLIC_DOCS_URL ??
-  "https://mind-studio.github.io/mind-specification/";
+  process.env.NEXT_PUBLIC_DOCS_URL ?? "https://mind-studio.github.io/mind-specification/";
 
 export const SOLID_URL = "https://solidproject.org";

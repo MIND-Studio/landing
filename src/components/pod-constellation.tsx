@@ -14,23 +14,13 @@
 const INNER = ["Drive", "Chat", "Calendar", "Photos"];
 const OUTER = ["Dock", "Notes", "Slides", "Agents", "Codespaces", "Whiteboard"];
 
-function Ring({
-  apps,
-  variant,
-}: {
-  apps: string[];
-  variant: "inner" | "outer";
-}) {
+function Ring({ apps, variant }: { apps: string[]; variant: "inner" | "outer" }) {
   const n = apps.length;
   return (
     <div className={`pc-ring pc-ring--${variant}`}>
       <span className="pc-orbit" aria-hidden />
       {apps.map((name, i) => (
-        <div
-          key={name}
-          className="pc-node"
-          style={{ ["--i" as string]: i, ["--n" as string]: n }}
-        >
+        <div key={name} className="pc-node" style={{ ["--i" as string]: i, ["--n" as string]: n }}>
           <span className="pc-spoke" aria-hidden />
           <span className="pc-mote" style={{ ["--i" as string]: i }} aria-hidden />
           <div className={`pc-spin pc-spin--${variant}`}>
@@ -46,7 +36,11 @@ function Ring({
 
 export function PodConstellation() {
   return (
-    <div className="pc-stage" role="img" aria-label="Your pod at the center, with Mind apps — Drive, Chat, Calendar, Photos, Dock, Notes, Agents and more — orbiting it.">
+    <div
+      className="pc-stage"
+      role="img"
+      aria-label="Your pod at the center, with Mind apps — Drive, Chat, Calendar, Photos, Dock, Notes, Agents and more — orbiting it."
+    >
       <Ring apps={OUTER} variant="outer" />
       <Ring apps={INNER} variant="inner" />
       <div className="pc-core">

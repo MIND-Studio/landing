@@ -30,14 +30,16 @@ export const LIVE_APPS: AppEntry[] = [
   },
   {
     name: "Drive",
-    tagline: "A file browser for your pod — upload, preview, and share, all stored in storage you own.",
+    tagline:
+      "A file browser for your pod — upload, preview, and share, all stored in storage you own.",
     href: DRIVE_URL,
     host: "drive.apps.mindpods.org",
     status: "live",
   },
   {
     name: "Builder",
-    tagline: "Wish an app into being — describe what you want and watch it get built into your pod.",
+    tagline:
+      "Wish an app into being — describe what you want and watch it get built into your pod.",
     href: BUILDER_URL,
     host: "builder.apps.mindpods.org",
     status: "live",
@@ -100,7 +102,8 @@ export const LIVE_APPS: AppEntry[] = [
   },
   {
     name: "Shell",
-    tagline: "An identity surface with a zero-knowledge vault — your passwords, encrypted in your pod.",
+    tagline:
+      "An identity surface with a zero-knowledge vault — your passwords, encrypted in your pod.",
     href: SHELL_URL,
     host: "shell.apps.mindpods.org",
     status: "live",
@@ -108,14 +111,52 @@ export const LIVE_APPS: AppEntry[] = [
 ];
 
 export const SOON_APPS: AppEntry[] = [
-  { name: "Agents", tagline: "A team of AI specialists whose memory lives in your pod — not the model vendor's.", status: "soon" },
-  { name: "Compass", tagline: "The operator's cockpit for your worker fleet — pause agents, approve drafts, watch the log.", status: "soon" },
-  { name: "Issues", tagline: "Work tracking where humans and agents are teammates on the same board.", status: "soon" },
-  { name: "Pages", tagline: "Notion-style pages and databases written straight to your pod.", status: "soon" },
-  { name: "Sheets", tagline: "Spreadsheets stored as plain files in your pod, readable by any app.", status: "soon" },
-  { name: "Sites", tagline: "Wish a website in chat — it gets built, published, and lives in your pod.", status: "soon" },
-  { name: "Videos", tagline: "Drop phone clips and let AI auto-edit and render, your pod as the source of truth.", status: "soon" },
-  { name: "Shop", tagline: "Commerce, pod-first — own your products, orders, and customers; no platform takes a cut.", status: "soon" },
+  {
+    name: "Agents",
+    tagline: "A team of AI specialists whose memory lives in your pod — not the model vendor's.",
+    status: "soon",
+  },
+  {
+    name: "Compass",
+    tagline:
+      "The operator's cockpit for your worker fleet — pause agents, approve drafts, watch the log.",
+    status: "soon",
+  },
+  {
+    name: "Issues",
+    tagline: "Work tracking where humans and agents are teammates on the same board.",
+    status: "soon",
+  },
+  {
+    name: "Pages",
+    tagline: "Notion-style pages and databases written straight to your pod.",
+    status: "soon",
+  },
+  {
+    name: "Sheets",
+    tagline: "Spreadsheets stored as plain files in your pod, readable by any app.",
+    status: "soon",
+  },
+  {
+    name: "Sites",
+    tagline: "Wish a website in chat — it gets built, published, and lives in your pod.",
+    status: "soon",
+  },
+  {
+    name: "Videos",
+    tagline: "Drop phone clips and let AI auto-edit and render, your pod as the source of truth.",
+    status: "soon",
+  },
+  {
+    name: "Shop",
+    tagline:
+      "Commerce, pod-first — own your products, orders, and customers; no platform takes a cut.",
+    status: "soon",
+  },
   { name: "Health", tagline: "Personal health records that never leave your pod.", status: "soon" },
-  { name: "Social", tagline: "Posts, friends, and async game duels — your timeline, your rules.", status: "soon" },
+  {
+    name: "Social",
+    tagline: "Posts, friends, and async game duels — your timeline, your rules.",
+    status: "soon",
+  },
 ];

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Section, SectionHeading } from "@/components/section";
 import { CtaButtons } from "@/components/cta-buttons";
+import { Section, SectionHeading } from "@/components/section";
 import { SOLID_URL } from "@/lib/links";
 
 export const metadata: Metadata = {
@@ -13,12 +13,14 @@ const PRINCIPLES = [
   {
     title: "Your pod is the source of truth",
     body: "Only your pod holds the real, authoritative copy of your data. Apps and workers can be swapped without touching it.",
-    consequence: "There's no “export my data” feature — because nothing is being held hostage in the first place.",
+    consequence:
+      "There's no “export my data” feature — because nothing is being held hostage in the first place.",
   },
   {
     title: "Your AI's memory is yours",
     body: "The agent runtime that powers your assistants is replaceable. Swap it out and everything your agents have learned about you stays where it lives — in your pod.",
-    consequence: "Your assistant's memory belongs to you, not to whichever model vendor you used last.",
+    consequence:
+      "Your assistant's memory belongs to you, not to whichever model vendor you used last.",
   },
   {
     title: "Your password only touches your pod",
@@ -28,7 +30,8 @@ const PRINCIPLES = [
   {
     title: "You can always leave",
     body: "Your pod can move between hosts — your own VPS, a community server, a friend's box — without breaking your identity or the apps that point at it.",
-    consequence: "No host can lock you in. Hosting is a service you buy, never a hostage situation.",
+    consequence:
+      "No host can lock you in. Hosting is a service you buy, never a hostage situation.",
   },
 ];
 
@@ -66,18 +69,18 @@ export default function PrivacyPage() {
             Per-resource control
           </h2>
           <p className="mt-3 text-muted-foreground">
-            Every folder and file in your pod carries its own access rules. You can grant a
-            friend read access to one album, give an app write access to a single folder, hand a
-            task to an agent for a day, or revoke any of it the moment you change your mind. The
-            default is private.
+            Every folder and file in your pod carries its own access rules. You can grant a friend
+            read access to one album, give an app write access to a single folder, hand a task to an
+            agent for a day, or revoke any of it the moment you change your mind. The default is
+            private.
           </p>
           <p className="mt-4 text-muted-foreground">
             It's all standard{" "}
             <a className="text-primary underline-offset-4 hover:underline" href={SOLID_URL}>
               Solid
             </a>{" "}
-            — the open, vendor-neutral web standard for data ownership — so this isn't a
-            proprietary lock you have to trust us to honor.
+            — the open, vendor-neutral web standard for data ownership — so this isn't a proprietary
+            lock you have to trust us to honor.
           </p>
         </div>
       </Section>

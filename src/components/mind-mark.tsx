@@ -15,7 +15,10 @@ export function MindMark({ className = "" }: { className?: string }) {
   let capIndex = 0;
 
   return (
-    <div className={`mind-mark panel ${className}`} aria-label="Decentralized Network In Mind, collapsing into MIND">
+    <div
+      className={`mind-mark panel ${className}`}
+      aria-label="Decentralized Network In Mind, collapsing into MIND"
+    >
       <div className="ln">
         {Array.from(PHRASE).map((char, i) => {
           const isCap = char >= "A" && char <= "Z";
