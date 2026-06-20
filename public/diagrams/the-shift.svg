@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 420" width="840" height="420" role="img" aria-label="Today your photos, messages and files each sit locked inside a separate company's app. With Mind, they all live in one private space you own, and your apps simply visit — so you can switch apps anytime and your things stay put.">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0e1411"/>
+      <stop offset="1" stop-color="#0a0f0d"/>
+    </linearGradient>
+    <linearGradient id="em" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#34d399"/>
+      <stop offset="1" stop-color="#6ee7b7"/>
+    </linearGradient>
+    <radialGradient id="emglow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#34d399" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      .h  { font-family:-apple-system,system-ui,'Segoe UI',Helvetica,sans-serif; font-weight:600; }
+      .b  { font-family:-apple-system,system-ui,'Segoe UI',Helvetica,sans-serif; font-weight:400; }
+      .lbl{ font-family:-apple-system,system-ui,'Segoe UI',Helvetica,sans-serif; font-weight:500; }
+    </style>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="839" height="419" rx="20" fill="url(#bg)" stroke="#1b241f"/>
+  <line x1="416" y1="64" x2="416" y2="356" stroke="#1e2a23" stroke-dasharray="2 7"/>
+
+  <!-- ============ LEFT: Today ============ -->
+  <text x="44" y="74" class="h" font-size="20" fill="#cfd8d2">Today</text>
+  <text x="44" y="100" class="b" font-size="13.5" fill="#8a988e">Your things, split across apps</text>
+  <text x="44" y="119" class="b" font-size="13.5" fill="#8a988e">that each keep their own copy.</text>
+
+  <g transform="translate(48,154) rotate(-3)">
+    <rect x="0" y="0" width="172" height="58" rx="13" fill="#141a16" stroke="#26302a"/>
+    <rect x="20" y="20" width="20" height="20" rx="6" fill="none" stroke="#7e8c84" stroke-width="1.6"/>
+    <circle cx="27" cy="27" r="3" fill="none" stroke="#7e8c84" stroke-width="1.5"/><path d="M33,40 l-7,-7" stroke="#7e8c84" stroke-width="1.5"/>
+    <text x="54" y="35" class="lbl" font-size="14" fill="#c2ccc5">Photos</text>
+    <rect x="142" y="20" width="16" height="13" rx="3" fill="#1d2520" stroke="#6b7770" stroke-width="1.4"/>
+    <path d="M145,20 v-3 a5,5 0 0 1 10,0 v3" fill="none" stroke="#6b7770" stroke-width="1.4"/>
+  </g>
+  <g transform="translate(168,226) rotate(2.5)">
+    <rect x="0" y="0" width="172" height="58" rx="13" fill="#141a16" stroke="#26302a"/>
+    <path d="M19,21 h22 a3,3 0 0 1 3,3 v8 a3,3 0 0 1 -3,3 h-14 l-6,5 v-5 a3,3 0 0 1 -2,-3 v-8 a3,3 0 0 1 0,-3 z" fill="none" stroke="#7e8c84" stroke-width="1.5"/>
+    <text x="54" y="35" class="lbl" font-size="14" fill="#c2ccc5">Messages</text>
+    <rect x="142" y="20" width="16" height="13" rx="3" fill="#1d2520" stroke="#6b7770" stroke-width="1.4"/>
+    <path d="M145,20 v-3 a5,5 0 0 1 10,0 v3" fill="none" stroke="#6b7770" stroke-width="1.4"/>
+  </g>
+  <g transform="translate(48,298) rotate(-1.5)">
+    <rect x="0" y="0" width="172" height="58" rx="13" fill="#141a16" stroke="#26302a"/>
+    <path d="M22,19 h12 l6,6 v15 a2,2 0 0 1 -2,2 h-16 a2,2 0 0 1 -2,-2 v-19 a2,2 0 0 1 2,-2 z" fill="none" stroke="#7e8c84" stroke-width="1.5"/>
+    <text x="54" y="35" class="lbl" font-size="14" fill="#c2ccc5">Files</text>
+    <rect x="142" y="20" width="16" height="13" rx="3" fill="#1d2520" stroke="#6b7770" stroke-width="1.4"/>
+    <path d="M145,20 v-3 a5,5 0 0 1 10,0 v3" fill="none" stroke="#6b7770" stroke-width="1.4"/>
+  </g>
+
+  <!-- ============ RIGHT: With Mind ============ -->
+  <text x="464" y="74" class="h" font-size="20" fill="#7ee9bd">With Mind</text>
+  <text x="464" y="100" class="b" font-size="13.5" fill="#9fb0a6">One private space you own —</text>
+  <text x="464" y="119" class="b" font-size="13.5" fill="#9fb0a6">your apps simply visit.</text>
+
+  <!-- connectors (behind the circle) -->
+  <g stroke="#2c4a3d" stroke-width="1.5" fill="none">
+    <line x1="600" y1="226" x2="512" y2="156"/>
+    <line x1="600" y1="226" x2="694" y2="156"/>
+    <line x1="600" y1="226" x2="512" y2="300"/>
+    <line x1="600" y1="226" x2="700" y2="300"/>
+  </g>
+
+  <!-- the central space -->
+  <circle cx="600" cy="226" r="92" fill="url(#emglow)"/>
+  <circle cx="600" cy="226" r="54" fill="#0c1f18" stroke="url(#em)" stroke-width="1.7" filter="url(#soft)"/>
+  <path d="M584,222 l16,-13 l16,13 v17 a2,2 0 0 1 -2,2 h-28 a2,2 0 0 1 -2,-2 z" fill="none" stroke="url(#em)" stroke-width="2"/>
+  <text x="600" y="258" text-anchor="middle" class="h" font-size="12.5" fill="#d6f7e8">Your space</text>
+
+  <!-- friendly open chips (no locks) -->
+  <g>
+    <rect x="456" y="139" width="100" height="34" rx="17" fill="#11201a" stroke="#2c5346"/>
+    <circle cx="474" cy="156" r="6.5" fill="none" stroke="#6ee7b7" stroke-width="1.5"/><path d="M470,159 l3,-3 l3,2 l3,-4" fill="none" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="488" y="161" class="lbl" font-size="13" fill="#cdeede">Photos</text>
+  </g>
+  <g>
+    <rect x="648" y="139" width="106" height="34" rx="17" fill="#11201a" stroke="#2c5346"/>
+    <rect x="664" y="149" width="14" height="12" rx="3.5" fill="none" stroke="#6ee7b7" stroke-width="1.5"/><path d="M664,153 h14" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="684" y="161" class="lbl" font-size="13" fill="#cdeede">Calendar</text>
+  </g>
+  <g>
+    <rect x="448" y="283" width="92" height="34" rx="17" fill="#11201a" stroke="#2c5346"/>
+    <path d="M466,293 h8 l4,4 v8 h-12 z" fill="none" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="486" y="305" class="lbl" font-size="13" fill="#cdeede">Files</text>
+  </g>
+  <g>
+    <rect x="642" y="283" width="118" height="34" rx="17" fill="#11201a" stroke="#2c5346"/>
+    <path d="M659,294 h12 a2,2 0 0 1 2,2 v5 a2,2 0 0 1 -2,2 h-8 l-4,3 v-3 a2,2 0 0 1 -2,-2 v-5 a2,2 0 0 1 2,-2 z" fill="none" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="680" y="305" class="lbl" font-size="13" fill="#cdeede">Messages</text>
+  </g>
+
+  <text x="420" y="396" text-anchor="middle" class="h" font-size="14.5" fill="#cfd8d2">Switch apps anytime &#8212; your things stay put.</text>
+</svg>

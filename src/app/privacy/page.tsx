@@ -1,37 +1,37 @@
 import type { Metadata } from "next";
 import { CtaButtons } from "@/components/cta-buttons";
+import { FigurePanel } from "@/components/figure-panel";
 import { Section, SectionHeading } from "@/components/section";
 import { SOLID_URL } from "@/lib/links";
 
 export const metadata: Metadata = {
   title: "Privacy",
   description:
-    "Privacy by architecture, not by promise. Your pod is the source of truth, workers are replaceable, and no host can hold your data hostage.",
+    "Privacy built into how Mind works, not promised in a policy. Your space holds the real copy of your things, you choose who sees what, and no host can hold your data hostage.",
 };
 
 const PRINCIPLES = [
   {
-    title: "Your pod is the source of truth",
-    body: "Only your pod holds the real, authoritative copy of your data. Apps and workers can be swapped without touching it.",
+    title: "Your space holds the real copy",
+    body: "Only your space has the true copy of your things. Apps can come and go without ever touching it.",
     consequence:
-      "There's no “export my data” feature — because nothing is being held hostage in the first place.",
+      "There's no “export my data” button — because nothing is being held somewhere else to hand back.",
   },
   {
     title: "Your AI's memory is yours",
-    body: "The agent runtime that powers your assistants is replaceable. Swap it out and everything your agents have learned about you stays where it lives — in your pod.",
+    body: "What your assistants learn about you stays in your space. Switch to a different assistant and everything it knew is still there.",
     consequence:
-      "Your assistant's memory belongs to you, not to whichever model vendor you used last.",
+      "Your assistant's memory belongs to you, not to whichever AI company you used last.",
   },
   {
-    title: "Your password only touches your pod",
-    body: "Apps never see your credentials. You log in at your own pod, and apps are handed access only to the folders you grant — read-only, a single folder, or revoked entirely.",
-    consequence: "An app gets the keys to one room, not the whole house.",
+    title: "Your password only touches your space",
+    body: "Apps never see how you log in. You sign in at your own space, and apps get only what you hand them — read-only, one folder, or nothing at all.",
+    consequence: "An app gets the key to one room, never the whole house.",
   },
   {
     title: "You can always leave",
-    body: "Your pod can move between hosts — your own VPS, a community server, a friend's box — without breaking your identity or the apps that point at it.",
-    consequence:
-      "No host can lock you in. Hosting is a service you buy, never a hostage situation.",
+    body: "Move your space to another home — your own computer, a community host, a friend's server — without breaking your sign-in or the apps you use.",
+    consequence: "No company can lock you in. Hosting is a service you buy, never a trap.",
   },
 ];
 
@@ -40,11 +40,20 @@ export default function PrivacyPage() {
     <>
       <Section className="pb-6 text-center md:pt-20">
         <SectionHeading
-          eyebrow="By architecture, not by promise"
+          eyebrow="Built in, not promised"
           title="Privacy you can't be talked out of"
-          lead="Most products ask you to trust a privacy policy. Mind is built so the data was never theirs to misuse. Here's what that means in practice."
+          lead="Most products ask you to trust a privacy policy. Mind is built so your things were never theirs to misuse in the first place. Here's what that means in plain terms."
           align="center"
         />
+      </Section>
+
+      <Section className="py-6">
+        <div className="mx-auto max-w-4xl">
+          <FigurePanel
+            src="/diagrams/you-decide.svg"
+            alt="Inside your space your photos and files stay private, while you've shared just your address with the Shop app, which can see only that one thing — and you can take it back at any time."
+          />
+        </div>
       </Section>
 
       <Section className="py-6">
@@ -54,7 +63,7 @@ export default function PrivacyPage() {
               <h2 className="font-display text-xl font-semibold tracking-tight">{p.title}</h2>
               <p className="mt-3 text-muted-foreground">{p.body}</p>
               <p className="mt-4 border-l-2 border-primary/60 pl-3 text-sm">
-                <span className="eyebrow">Consequence</span>
+                <span className="eyebrow">What that means</span>
                 <br />
                 {p.consequence}
               </p>
@@ -66,27 +75,26 @@ export default function PrivacyPage() {
       <Section width="narrow" className="py-6">
         <div className="glass-panel rounded-2xl p-8">
           <h2 className="font-display text-2xl font-semibold tracking-tight">
-            Per-resource control
+            You decide who sees what
           </h2>
           <p className="mt-3 text-muted-foreground">
-            Every folder and file in your pod carries its own access rules. You can grant a friend
-            read access to one album, give an app write access to a single folder, hand a task to an
-            agent for a day, or revoke any of it the moment you change your mind. The default is
-            private.
+            Everything in your space starts out private. From there you can share one photo album
+            with a friend, let an app use a single folder, hand a task to an assistant for the day,
+            or take any of it back the moment you change your mind.
           </p>
           <p className="mt-4 text-muted-foreground">
-            It's all standard{" "}
+            It's all built on{" "}
             <a className="text-primary underline-offset-4 hover:underline" href={SOLID_URL}>
               Solid
-            </a>{" "}
-            — the open, vendor-neutral web standard for data ownership — so this isn't a proprietary
-            lock you have to trust us to honor.
+            </a>
+            , an open web standard for owning your own data — so this isn't a private promise you
+            have to trust us to keep.
           </p>
         </div>
       </Section>
 
       <Section className="text-center">
-        <SectionHeading title="Own your data. Start now." align="center" />
+        <SectionHeading title="Own your things. Start now." align="center" />
         <CtaButtons className="mt-8 justify-center" />
       </Section>
     </>

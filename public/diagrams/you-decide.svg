@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 420" width="840" height="420" role="img" aria-label="Inside your space your photos and files stay private, while you've shared just your address with the Shop app — which can see only that one thing, and you can take it back at any time.">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0e1411"/>
+      <stop offset="1" stop-color="#0a0f0d"/>
+    </linearGradient>
+    <linearGradient id="em" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#34d399"/>
+      <stop offset="1" stop-color="#6ee7b7"/>
+    </linearGradient>
+    <radialGradient id="emglow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#34d399" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      .h  { font-family:-apple-system,system-ui,'Segoe UI',Helvetica,sans-serif; font-weight:600; }
+      .b  { font-family:-apple-system,system-ui,'Segoe UI',Helvetica,sans-serif; font-weight:400; }
+      .lbl{ font-family:-apple-system,system-ui,'Segoe UI',Helvetica,sans-serif; font-weight:500; }
+    </style>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="839" height="419" rx="20" fill="url(#bg)" stroke="#1b241f"/>
+
+  <!-- your space, with three things in three states -->
+  <rect x="44" y="78" width="384" height="264" rx="18" fill="#0d130f" stroke="#243029"/>
+  <path d="M62,104 l10,-9 l10,9 v11 a1.4,1.4 0 0 1 -1.4,1.4 h-17.2 a1.4,1.4 0 0 1 -1.4,-1.4 z" fill="none" stroke="#6ee7b7" stroke-width="1.6"/>
+  <text x="92" y="110" class="h" font-size="15" fill="#d6f7e8">Your space</text>
+
+  <!-- private: photos -->
+  <g>
+    <rect x="64" y="128" width="344" height="52" rx="12" fill="#141a16" stroke="#26302a"/>
+    <text x="84" y="159" class="lbl" font-size="14" fill="#c2ccc5">Your photos</text>
+    <text x="300" y="159" class="b" font-size="12.5" fill="#7d8a82">private</text>
+    <rect x="372" y="146" width="16" height="13" rx="3" fill="#1d2520" stroke="#8a978f" stroke-width="1.4"/>
+    <path d="M375,146 v-3 a5,5 0 0 1 10,0 v3" fill="none" stroke="#8a978f" stroke-width="1.4"/>
+  </g>
+  <!-- shared: address -->
+  <g>
+    <rect x="64" y="188" width="344" height="52" rx="12" fill="#0c1f18" stroke="url(#em)" stroke-width="1.5"/>
+    <rect x="64.5" y="188.5" width="5" height="51" rx="2.5" fill="url(#em)"/>
+    <text x="84" y="212" class="lbl" font-size="14" fill="#eafff6">Your address</text>
+    <text x="84" y="229" class="b" font-size="12" fill="#86b6a1">shared with Shop</text>
+    <rect x="318" y="200" width="74" height="26" rx="13" fill="#13241d" stroke="#2c5346"/>
+    <text x="355" y="217" text-anchor="middle" class="lbl" font-size="11.5" fill="#9fe7c8">Revoke</text>
+  </g>
+  <!-- private: files -->
+  <g>
+    <rect x="64" y="248" width="344" height="52" rx="12" fill="#141a16" stroke="#26302a"/>
+    <text x="84" y="279" class="lbl" font-size="14" fill="#c2ccc5">Your files</text>
+    <text x="305" y="279" class="b" font-size="12.5" fill="#7d8a82">private</text>
+    <rect x="372" y="266" width="16" height="13" rx="3" fill="#1d2520" stroke="#8a978f" stroke-width="1.4"/>
+    <path d="M375,266 v-3 a5,5 0 0 1 10,0 v3" fill="none" stroke="#8a978f" stroke-width="1.4"/>
+  </g>
+
+  <!-- the one grant reaches out to Shop -->
+  <path d="M428,214 C500,214 520,210 560,210" stroke="#2c4a3d" stroke-width="1.6" fill="none"/>
+  <text x="494" y="200" text-anchor="middle" class="b" font-size="12" fill="#86b6a1">sees only this</text>
+
+  <ellipse cx="672" cy="210" rx="150" ry="120" fill="url(#emglow)"/>
+  <rect x="560" y="166" width="224" height="92" rx="16" fill="#131a16" stroke="#2c5346" filter="url(#soft)"/>
+  <path d="M584,196 h22 l-2,-9 h-18 z M586,196 v14 h18 v-14" fill="none" stroke="#6ee7b7" stroke-width="1.5"/>
+  <text x="618" y="195" class="h" font-size="15" fill="#e6f6ee">Shop</text>
+  <text x="584" y="232" class="b" font-size="12.5" fill="#a9c4b7">Can see your address —</text>
+  <text x="584" y="249" class="b" font-size="12.5" fill="#a9c4b7">and nothing else.</text>
+
+  <text x="420" y="392" text-anchor="middle" class="h" font-size="14.5" fill="#cfd8d2">Share one thing with one app &#8212; and take it back anytime.</text>
+</svg>

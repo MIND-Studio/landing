@@ -18,92 +18,90 @@ import {
  * The Mind app family. "live" apps are deployed to production today (each at
  * `<name>.apps.mindpods.org`) with a working link; "soon" apps come from the
  * architecture spec (apps.md / roadmap.md) and are listed without a link.
- * Taglines paraphrase mind-specification/src/apps.md.
+ * Taglines are written in plain language — "your space" rather than "pod", no
+ * file paths or protocol jargon — to match the marketing voice (for everyone).
  */
 export const LIVE_APPS: AppEntry[] = [
   {
     name: "Dock",
-    tagline: "Your front door — one sign-in, every app, your profile and account in one place.",
+    tagline: "Your front door — one sign-in that opens every app, with your profile in one place.",
     href: DOCK_URL,
     host: "dock.apps.mindpods.org",
     status: "live",
   },
   {
     name: "Drive",
-    tagline:
-      "A file browser for your pod — upload, preview, and share, all stored in storage you own.",
+    tagline: "All your files in one place you own — upload, preview, and share in a click.",
     href: DRIVE_URL,
     host: "drive.apps.mindpods.org",
     status: "live",
   },
   {
     name: "Builder",
-    tagline:
-      "Wish an app into being — describe what you want and watch it get built into your pod.",
+    tagline: "Describe an app in plain words and watch it get built, right in your space.",
     href: BUILDER_URL,
     host: "builder.apps.mindpods.org",
     status: "live",
   },
   {
     name: "Codespaces",
-    tagline: "git push your site straight into your pod, then publish it to the web.",
+    tagline: "Push your code and publish your website to the web, hosted in your own space.",
     href: CODESPACES_URL,
     host: "codespaces.mindpods.org",
     status: "live",
   },
   {
     name: "Chat",
-    tagline: "Pod-to-pod conversations with real-time delivery — no central server in the middle.",
+    tagline: "Real-time messaging with no company sitting in the middle of your conversations.",
     href: CHAT_URL,
     host: "chat.apps.mindpods.org",
     status: "live",
   },
   {
     name: "Calendar",
-    tagline: "A surface over your /calendar/ — one set of events every trusted app can see.",
+    tagline: "One calendar your trusted apps can all see — events that live in your space.",
     href: CALENDAR_URL,
     host: "calendar.apps.mindpods.org",
     status: "live",
   },
   {
     name: "Contacts",
-    tagline: "Your address book as pod data, shared across the apps that need it.",
+    tagline: "One address book, shared with the apps that need it — and no one else.",
     href: CONTACTS_URL,
     host: "contacts.apps.mindpods.org",
     status: "live",
   },
   {
     name: "Notes",
-    tagline: "Notes and documents that live in your pod, readable by every app you trust.",
+    tagline: "Notes and documents that live in your space, open to the apps you trust.",
     href: NOTES_URL,
     host: "notes.apps.mindpods.org",
     status: "live",
   },
   {
     name: "Photos",
-    tagline: "A photo gallery backed by your pod — your memories, in storage you own.",
+    tagline: "Your photo gallery — every memory kept in a space that's yours.",
     href: PHOTOS_URL,
     host: "photos.apps.mindpods.org",
     status: "live",
   },
   {
     name: "Slides",
-    tagline: "Build and publish presentation decks stored as files in your pod.",
+    tagline: "Build and share presentation decks, kept as files in your own space.",
     href: SLIDES_URL,
     host: "slides.apps.mindpods.org",
     status: "live",
   },
   {
     name: "Whiteboard",
-    tagline: "A collaborative canvas — draw and live-collaborate with boards kept in your pod.",
+    tagline: "A shared canvas — sketch and collaborate live, with boards kept in your space.",
     href: WHITEBOARD_URL,
     host: "whiteboard.apps.mindpods.org",
     status: "live",
   },
   {
     name: "Shell",
-    tagline:
-      "An identity surface with a zero-knowledge vault — your passwords, encrypted in your pod.",
+    tagline: "Your passwords, sealed so tightly that not even we can read them.",
     href: SHELL_URL,
     host: "shell.apps.mindpods.org",
     status: "live",
@@ -113,50 +111,49 @@ export const LIVE_APPS: AppEntry[] = [
 export const SOON_APPS: AppEntry[] = [
   {
     name: "Agents",
-    tagline: "A team of AI specialists whose memory lives in your pod — not the model vendor's.",
+    tagline: "A team of AI helpers whose memory lives in your space — not an AI company's.",
     status: "soon",
   },
   {
     name: "Compass",
     tagline:
-      "The operator's cockpit for your worker fleet — pause agents, approve drafts, watch the log.",
+      "Your control room for those helpers — pause them, approve their work, see what they did.",
     status: "soon",
   },
   {
     name: "Issues",
-    tagline: "Work tracking where humans and agents are teammates on the same board.",
+    tagline: "Track work where people and AI helpers are teammates on the same board.",
     status: "soon",
   },
   {
     name: "Pages",
-    tagline: "Notion-style pages and databases written straight to your pod.",
+    tagline: "Docs and simple databases, written straight to your own space.",
     status: "soon",
   },
   {
     name: "Sheets",
-    tagline: "Spreadsheets stored as plain files in your pod, readable by any app.",
-    status: "soon",
-  },
-  {
-    name: "Sites",
-    tagline: "Wish a website in chat — it gets built, published, and lives in your pod.",
+    tagline: "Spreadsheets kept as plain files in your space, open to any app.",
     status: "soon",
   },
   {
     name: "Videos",
-    tagline: "Drop phone clips and let AI auto-edit and render, your pod as the source of truth.",
+    tagline: "Drop in phone clips and let AI cut them together — your space as the master copy.",
     status: "soon",
   },
   {
     name: "Shop",
     tagline:
-      "Commerce, pod-first — own your products, orders, and customers; no platform takes a cut.",
+      "Sell your own way — own your products, orders and customers; no platform takes a cut.",
     status: "soon",
   },
-  { name: "Health", tagline: "Personal health records that never leave your pod.", status: "soon" },
+  {
+    name: "Health",
+    tagline: "Personal health records that never leave your own space.",
+    status: "soon",
+  },
   {
     name: "Social",
-    tagline: "Posts, friends, and async game duels — your timeline, your rules.",
+    tagline: "Posts, friends and async game duels — your timeline, your rules.",
     status: "soon",
   },
 ];

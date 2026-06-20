@@ -39,7 +39,7 @@ export function PodConstellation() {
     <div
       className="pc-stage"
       role="img"
-      aria-label="Your pod at the center, with Mind apps — Drive, Chat, Calendar, Photos, Dock, Notes, Agents and more — orbiting it."
+      aria-label="Your space at the center, with Mind apps — Drive, Chat, Calendar, Photos, Dock, Notes, Agents and more — orbiting it."
     >
       <Ring apps={OUTER} variant="outer" />
       <Ring apps={INNER} variant="inner" />
@@ -47,7 +47,7 @@ export function PodConstellation() {
         <span className="pc-core-ring" aria-hidden />
         <span className="pc-core-label">
           <span className="pc-core-kicker">your</span>
-          pod
+          space
         </span>
       </div>
     </div>

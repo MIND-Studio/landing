@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 420" width="840" height="420" role="img" aria-label="A single plan saved in your space — dinner with Mum on Saturday at 7pm — shows up the same in your Calendar, your assistant and your messages. Write it once and every app sees the same thing.">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0e1411"/>
+      <stop offset="1" stop-color="#0a0f0d"/>
+    </linearGradient>
+    <linearGradient id="em" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#34d399"/>
+      <stop offset="1" stop-color="#6ee7b7"/>
+    </linearGradient>
+    <radialGradient id="emglow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#34d399" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      .h  { font-family:-apple-system,system-ui,'Segoe UI',Helvetica,sans-serif; font-weight:600; }
+      .b  { font-family:-apple-system,system-ui,'Segoe UI',Helvetica,sans-serif; font-weight:400; }
+      .lbl{ font-family:-apple-system,system-ui,'Segoe UI',Helvetica,sans-serif; font-weight:500; }
+    </style>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="839" height="419" rx="20" fill="url(#bg)" stroke="#1b241f"/>
+
+  <!-- source: the one plan, saved in your space -->
+  <ellipse cx="420" cy="108" rx="220" ry="80" fill="url(#emglow)"/>
+  <g>
+    <rect x="296" y="64" width="248" height="88" rx="16" fill="#0c1f18" stroke="url(#em)" stroke-width="1.6" filter="url(#soft)"/>
+    <circle cx="320" cy="88" r="5" fill="#34d399"/>
+    <text x="334" y="92" class="lbl" font-size="11.5" letter-spacing="0.4" fill="#7ee9bd">Saved in your space</text>
+    <text x="318" y="120" class="h" font-size="17" fill="#eafff6">Dinner with Mum</text>
+    <text x="318" y="140" class="b" font-size="13" fill="#a9c4b7">Saturday &#183; 7:00 pm</text>
+  </g>
+
+  <!-- fan-out lines to each app -->
+  <g stroke="#2c4a3d" stroke-width="1.5" fill="none">
+    <path d="M420,152 C420,196 156,180 156,232"/>
+    <path d="M420,152 L420,232"/>
+    <path d="M420,152 C420,196 684,180 684,232"/>
+  </g>
+
+  <text x="420" y="214" text-anchor="middle" class="b" font-size="12.5" fill="#79887e">the very same plan, everywhere</text>
+
+  <!-- three apps, all showing the same plan -->
+  <!-- Calendar -->
+  <g>
+    <rect x="42" y="234" width="228" height="118" rx="15" fill="#131a16" stroke="#26302a"/>
+    <rect x="60" y="252" width="15" height="13" rx="3.5" fill="none" stroke="#6ee7b7" stroke-width="1.6"/><path d="M60,257 h15" stroke="#6ee7b7" stroke-width="1.6"/>
+    <text x="84" y="263" class="h" font-size="13.5" fill="#cfd8d2">Calendar</text>
+    <rect x="60" y="282" width="192" height="52" rx="10" fill="#0e1713" stroke="#234034"/>
+    <rect x="60" y="282" width="5" height="52" rx="2.5" fill="#34d399"/>
+    <text x="78" y="305" class="lbl" font-size="13" fill="#dceee6">Sat &#183; Dinner with Mum</text>
+    <text x="78" y="323" class="b" font-size="12" fill="#90a89b">7:00 pm</text>
+  </g>
+  <!-- Assistant -->
+  <g>
+    <rect x="306" y="234" width="228" height="118" rx="15" fill="#131a16" stroke="#26302a"/>
+    <circle cx="328" cy="258" r="8" fill="none" stroke="#6ee7b7" stroke-width="1.6"/><circle cx="328" cy="258" r="2.4" fill="#6ee7b7"/>
+    <text x="346" y="263" class="h" font-size="13.5" fill="#cfd8d2">Assistant</text>
+    <rect x="324" y="282" width="196" height="52" rx="10" fill="#0e1713" stroke="#234034"/>
+    <text x="338" y="304" class="b" font-size="12.5" fill="#cfe4da">&#8220;I&#8217;ll remind you Saturday</text>
+    <text x="338" y="322" class="b" font-size="12.5" fill="#cfe4da">before dinner.&#8221;</text>
+  </g>
+  <!-- Messages -->
+  <g>
+    <rect x="570" y="234" width="228" height="118" rx="15" fill="#131a16" stroke="#26302a"/>
+    <path d="M590,252 h14 a2.5,2.5 0 0 1 2.5,2.5 v6 a2.5,2.5 0 0 1 -2.5,2.5 h-9 l-5,4 v-4 a2.5,2.5 0 0 1 -2.5,-2.5 v-6 a2.5,2.5 0 0 1 2.5,-2.5 z" fill="none" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="616" y="263" class="h" font-size="13.5" fill="#cfd8d2">Messages</text>
+    <rect x="588" y="282" width="178" height="34" rx="14" fill="#13241d" stroke="#2c5346"/>
+    <text x="604" y="304" class="b" font-size="12.5" fill="#cfe4da">See you Sat, 7pm! &#127881;</text>
+  </g>
+
+  <text x="420" y="392" text-anchor="middle" class="h" font-size="14.5" fill="#cfd8d2">Write it once &#8212; every app sees the same thing.</text>
+</svg>
