@@ -199,8 +199,8 @@ body {
 
 /* ---- .mind-mark — animated wordmark -------------------------------------
    Ported from architecture/shared/brand.css. "Decentralized Network In Mind"
-   → the four cyan initials fly together into MIND. CSS-only; self-contained
-   literal colors so it renders identically to the spec site.
+   → the four Mind-green initials fly together into MIND. CSS-only; self-contained
+   literal colors (Mind Green #29CE9F — the single brand accent).
    ------------------------------------------------------------------------- */
 .mind-mark {
   --hold: 1.9s;     /* how long the sentence shows before collapsing */
@@ -213,20 +213,20 @@ body {
   margin: 16px 0 32px;
   border: 1px solid #1e2939; border-radius: 12px; overflow: hidden;
   background:
-    radial-gradient(ellipse 90% 70% at 50% 45%, rgba(34, 211, 238, .08) 0, transparent 60%),
+    radial-gradient(ellipse 90% 70% at 50% 45%, rgba(41, 206, 159, .08) 0, transparent 60%),
     linear-gradient(180deg, #0b0d12, #07080b);
   box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .6);
 }
 .mind-mark .ln { white-space: nowrap; font-size: clamp(20px, 3.6vw, 46px); line-height: 1; font-weight: 600; }
 .mind-mark .ch { display: inline-block; width: 1ch; text-align: center; }
 .mind-mark .ch .g { display: inline-block; color: #7d8694; will-change: transform, opacity; }
-.mind-mark .c .g { color: #67e8f9; text-shadow: 0 0 .5em rgba(34, 211, 238, .35); }
+.mind-mark .c .g { color: #29CE9F; text-shadow: 0 0 .5em rgba(41, 206, 159, .35); }
 .mind-mark .c { animation: mmMove var(--move) cubic-bezier(.6, 0, .2, 1) var(--hold) both; }
 .mind-mark .c .g { animation: mmGrow var(--move) cubic-bezier(.6, 0, .2, 1) var(--hold) both; }
 .mind-mark .l .g { animation: mmFade .55s ease var(--hold) both; }
 @keyframes mmMove { to { transform: translateX(var(--dx)); } }
 @keyframes mmGrow { to { transform: scale(var(--scale));
-  text-shadow: 0 0 .8em rgba(34, 211, 238, .65), 0 0 1.6em rgba(34, 211, 238, .32); } }
+  text-shadow: 0 0 .8em rgba(41, 206, 159, .65), 0 0 1.6em rgba(41, 206, 159, .32); } }
 @keyframes mmFade { to { opacity: 0; transform: scale(.18) translateY(.1em); } }
 
 /* ---- depth layers (set in layout.tsx) ------------------------------------ */
