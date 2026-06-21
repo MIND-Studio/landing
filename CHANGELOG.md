@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0](https://github.com/MIND-Studio/landing/compare/v0.4.0...v0.5.0) (2026-06-21)
+
+
+### Features
+
+* adopt Mind weave logo and typography across the landing site ([#13](https://github.com/MIND-Studio/landing/issues/13)) ([7ebd61d](https://github.com/MIND-Studio/landing/commit/7ebd61d4362ad408816e015d6d4c264c313d3b86))
+
 ## [0.4.0](https://github.com/MIND-Studio/landing/compare/v0.3.0...v0.4.0) (2026-06-20)
 
 
